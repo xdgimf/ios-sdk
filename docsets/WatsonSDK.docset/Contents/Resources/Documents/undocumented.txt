@@ -1,0 +1,559 @@
+Dialog.swift
+	public class Dialog: WatsonService
+	public class Dialog : WatsonService
+	public class Dialog : WatsonService
+	public class Dialog : WatsonService
+	public class Dialog : WatsonService
+	public class Dialog : WatsonService
+	public class Dialog : WatsonService
+Classifier.swift
+	case Available = "Available"
+	case Failed = "Failed"
+	case NonExistent = "Non Existent"
+	case Training = "Training"
+	case Unavailable = "Unavailable"
+	public struct Classifier: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+NetworkUtils.swift
+	case Text =         "text/plain"
+	case JSON =         "application/json"
+	case XML =          "application/xml"
+	case URLEncoded =   "application/x-www-form-urlencoded"
+	case AUDIO_OPUS =   "audio/ogg; codecs=opus"
+	case AUDIO_WAV  =   "audio/wav"
+	case AUDIO_FLAC =   "audio/flac"
+	public static func performBasicAuthFileUpload(url: String, fileURL: NSURL, parameters: [String: AnyObject]=[:], apiKey: String? = nil, completionHandler: (returnValue: CoreResponse) -> ())
+DialogModel.swift
+	public struct DialogModel: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+AlchemyVisionConstants.swift
+	public static let visionServiceURL = "/calls"
+	public enum ImageLinkType: String
+	case HTML = "html"
+	case URL = "url"
+	public enum ImageKeywordType: String
+	case FILE = "file"
+	case URL = "url"
+	public enum ImageFacesType: String
+	case FILE = "file"
+	case URL = "url"
+	public enum VisionPrefix: String
+	case URL = "/url/"
+	case Image = "/image/"
+	case HTML = "/html/"
+	public enum ImageLinkExtraction: String
+	case URLGetImage = "URLGetImage"
+	case HTMLGetImage = "HTMLGetImage"
+	public enum ImageTagging: String
+	case URLGetRankedImageKeywords = "URLGetRankedImageKeywords"
+	case ImageGetRankedImageKeywords = "ImageGetRankedImageKeywords"
+	public enum FaceDetection: String
+	case URLGetRankedImageFaceTags = "URLGetRankedImageFaceTags"
+	case ImageGetRankedImageFaceTags = "ImageGetRankedImageFaceTags"
+	public enum Model: String
+	case TotalTransactions = "totalTransactions"
+	case JSON = "json"
+	case HTML = "html"
+	case XML = "xml"
+	case RDF = "rdf"
+	public enum ImagePostMode: String
+	case Raw = "raw"
+	case Not_Raw = "not-raw"
+	public enum ForceShowAll: String
+	case True = "1"
+	case False = "0"
+	public enum KnowledgeGraph: String
+	case True = "1'"
+	case False = "0"
+	case URL = "url"
+	case APIKey = "apikey"
+	case OutputMode = "outputMode"
+	case ForceShowAll = "forceShowAll"
+	case KnowledgeGraph = "knowledgeGraph"
+	case ImagePostMode = "imagePostMode"
+ImageKeyWord.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+IdentifiableLanguage.swift
+	public struct IdentifiableLanguage: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+ImageFaceTags.swift
+	public var imageFaces: [ImageFace] = []
+	public init()
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Transformation.swift
+	public class Transformation
+	public static let stringToInt = TransformOf<Int, String>(fromJSON: { (value: String?) -> Int? in
+	public static let stringToDouble = TransformOf<Double, String>(fromJSON: { (value: String?) -> Double? in
+Entities.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var entities: [Entity]? = []
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+TextToSpeech.swift
+	public init()
+Classification.swift
+	public struct Classification: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Sentiment.swift
+	public var mixed: Int?
+	public var score: Double?
+	public var type: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+ImageURL.swift
+	public init(path: String, url: NSURL)
+AlchemyLanguageGenericModel.swift
+	var language: String? { get set }
+	var url: String? { get set }
+CombinedResults.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var author: String?
+	public var concepts: [Concept]?
+	public var entities: Entities?
+	public var feeds: Feeds?
+	public var image: String?
+	public var imageKeywords: Keywords?
+	public var keywords: Keywords?
+	public var publicationDate: PublicationDate?
+	public var relations: SAORelations?
+	public var sentiment: Sentiment?
+	public var taxonomy: Taxonomy?
+	public var title: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Request.swift
+	public func debugLog() -> Self
+DialogFormat.swift
+	public enum DialogFormat: String
+	case OctetStream = "application/octet-stream"
+	case WDSJSON = "application/wds+json"
+	case WDSXML = "application/wds+xml"
+AlchemyVision.swift
+	public init()
+	public convenience init(apiKey:String)
+SpeechToTextConstants.swift
+	public enum SpeechToTextAudioFormat: String
+	case OGG        = "audio/ogg;codecs=opus"
+	case FLAC       = "audio/flac"
+	case PCM        = "audio/l16"
+	case WAV        = "audio/wav"
+Keyword.swift
+	public var knowledgeGraph: KnowledgeGraph?
+	public var relevance: Double?
+	public var sentiment: Sentiment?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+AlchemyLanguage.swift
+	public struct GetEntitiesParameters: AlchemyLanguageParameters
+	public struct GetSentimentParameters: AlchemyLanguageParameters
+	public struct GetKeywordsParameters: AlchemyLanguageParameters
+	public struct GetRankedConceptsParameters: AlchemyLanguageParameters
+	public struct GetRelationsParameters: AlchemyLanguageParameters
+	public struct GetRankedTaxonomyParameters: AlchemyLanguageParameters
+	public struct GetLanguageParameters: AlchemyLanguageParameters
+	public struct GetTextParameters: AlchemyLanguageParameters
+Trait.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SpeechToTextResult.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DocumentSentiment.swift
+	public var text: String?
+	public var sentiment: Sentiment?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+ImageLink.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Taxonomies.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var taxonomy: [Taxonomy]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SentimentResponse.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var docSentiment: Sentiment?                     // Normal
+	public var sentimentResults: [DocumentSentiment]?       // Targeted
+	public var usage: String?
+	public var warningMessage: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DialogConversation.swift
+	public struct Conversation: Mappable
+	public init?(_ map: Map) {}
+	mutating public func mapping(map: Map)
+	public struct HitNode: Mappable
+	public init?(_ map: Map) {}
+	mutating public func mapping(map: Map)
+	public struct Message: Mappable
+	public init?(_ map: Map) {}
+	mutating public func mapping(map: Map)
+DocumentAuthors.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var authors: Authors?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+KnowledgeGraph.swift
+	public var totalTransactions: Int?
+	public var typeHierarchy: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DisambiguatedLinks.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+AlchemyCombineDictionaryUtil.swift
+	public static func combineParameterDictionary(first: [String : String],
+        withDictionary second: [String : String]
+        ) -> [String : String]
+LanguageTranslation.swift
+	public init()
+ClassifiedClass.swift
+	public struct ClassifiedClass: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Voice.swift
+	public struct Voice: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SpeechToTextAlternative.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Profile.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Language.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var ethnologue: String?
+	public var iso6391: String?
+	public var iso6392: String?
+	public var iso6393: String?
+	public var nativeSpeakers: String?
+	public var wikipedia: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Service.swift
+	case Streaming = "stream.watsonplatform.net"
+	case Standard = "gateway.watsonplatform.net"
+	case Alchemy = "gateway-a.watsonplatform.net"
+CoreResponse.swift
+	public var data:AnyObject?
+	public var code:Int?
+	public var info:String?
+	public var help:String?
+	public var totalTransactions:Int?
+	public var usage:String?
+	public var status:String?
+	public var developer:String?
+	public var domain:String?
+	public var error:NSError?
+	public var description: String
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+NLCConstants.swift
+	public class NLCConstants
+	public enum TrainerProperty: String
+	case Language     = "language"
+	case Name         = "name"
+	case TrainingMeta = "training_metadata"
+	case TrainingData = "training_data"
+NaturalLanguageClassifier.swift
+	public class NaturalLanguageClassifier : Service
+	public init()
+Taxonomy.swift
+	public var confident: Int?
+	public var label: String?
+	public var score: Double?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+LanguageTranslationConstants.swift
+	public struct LanguageTranslationConstants
+AlchemyLanguageConstants.swift
+	public final class AlchemyLanguageConstants
+	public enum RequestType
+	case URL
+	case HTML
+	case Text
+	case JSON = "json"
+	case HTML = "html"
+	case XML = "xml"
+	case RDF = "rdf"
+	case URL = "url"
+	case APIKey = "apikey"
+	case OutputMode = "outputMode"
+	case KnowledgeGraph = "knowledgeGraph"
+	public enum SourceText: String
+	case cleaned_or_raw = "cleaned_or_raw"
+	case cleaned = "cleaned"
+	case raw = "raw"
+	case cquery = "cquery"
+	case xpath = "xpath"
+	case xpath_or_raw = "xpath_or_raw"
+	case cleaned_and_xpath = "cleaned_and_xpath"
+	public enum KeywordExtractMode: String
+	case normal = "normal"
+	case strict = "strict"
+	case Normal
+	case Raw
+	case Title
+	case Normal
+	case Targeted
+	public final class AlchemyLanguageConstants
+	public final class AlchemyLanguageConstants
+	public static func GetEntities(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetTextSentiment(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public static func GetTargetedSentiment(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetRankedKeywords(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetRankedConcepts(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetRelations(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetRankedTaxonomy(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetAuthors(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetLanguage(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetText(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public static func GetRawText(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public static func GetTitle(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetMicroformatData(fromRequestType requestType: AlchemyLanguageConstants.RequestType) -> String
+	public final class AlchemyLanguageConstants
+	public static func GetFeedLinks(fromRequestType rt: AlchemyLanguageConstants.RequestType) -> String
+DialogConversationResponse.swift
+	public struct ConversationResponse: Mappable
+	public init?(_ map: Map) {}
+	mutating public func mapping(map: Map)
+Microformat.swift
+	public var data: String?
+	public var field: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+ImageFace.swift
+	public var age         = [String: AnyObject]()
+	public var gender      = [String: AnyObject]()
+	public var height:     Int?
+	public var positionX:  Int?
+	public var positionY:  Int?
+	public var width:      Int?
+	public init()
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+PublicationDate.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var confident: Bool?
+	public var date: NSDate?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DocumentTitle.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var title: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Entity.swift
+	public var totalTransactions: Int?
+	public var count: Int?
+	public var disambiguated: DisambiguatedLinks?
+	public var knowledgeGraph: KnowledgeGraph?
+	public var quotations: [Quotation]? = []
+	public var relevance: Double?
+	public var sentiment: Sentiment?
+	public var text: String?
+	public var type: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SpeechToTextResponse.swift
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+	public func transcription () -> String
+ContentItem.swift
+	public init?(_ map: Map) {}
+	public init(ID:String?, userID:String?, sourceID:String?, created:Int?,
+            updated:Int?, contentType:String?, charset:String?, language:String?,
+            content:String?, parentID:String?, reply:Bool?, forward:Bool?)
+	public mutating func mapping(map: Map)
+ImageKeyWords.swift
+	public init()
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SpeechToTextDelegate.swift
+	public protocol SpeechToTextDelegate
+	func onSpeechRecognized(text: String)
+SAORelation.swift
+	public var action: Action?
+	public var sentence: String?
+	public var object: RelationObject?
+	public var subject: Subject?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+	public struct Action: Mappable
+	public var lemmatized: String?
+	public var text: String?
+	public var verb: Verb?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+	public struct Verb: Mappable
+	public var negated: Int?
+	public var tense: String?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+	public struct RelationObject: Mappable
+	public var entity: Entity?
+	public var keywords: Keywords?
+	public var sentiment: Sentiment?
+	public var sentimentFromSubject: Sentiment?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+	public struct Subject: Mappable
+	public var entity: Entity?
+	public var keywords: Keywords?
+	public var sentiment: Sentiment?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+WatsonCoreConstants.swift
+	public class WatsonCoreConstants
+	public static let defaultErrorDomain = "WatsonErrorDomain"
+	public static let descriptionKey = "localizedDescription"
+NSError.swift
+	public static func createWatsonError(code: Int, description: String) -> NSError
+IdentifiedLanguage.swift
+	public struct IdentifiedLanguage : Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Feeds.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var feeds: [Feed]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+MediaType.swift
+	case Plain = "text/plain"
+	case HTML = "text/html"
+	case JSON = "application/json"
+	case CSV = "text/csv"
+	case OctetStream = "application/octet-stream"
+	case WDSJSON = "application/wds+json"
+	case WDSXML = "application/wds+xml"
+DocumentText.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+ConceptResponse.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var concepts: [Concept]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+TranslationModel.swift
+	public struct TranslationModel : Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+SAORelations.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var text: String?
+	public var relations: [SAORelation]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Concept.swift
+	public var text: String?
+	public var relevance: Int?
+	public var knowledgeGraph: KnowledgeGraph?
+	public var website: String?
+	public var geo: String?
+	public var dbpedia: String?
+	public var yago: String?
+	public var opencyc: String?
+	public var freebase: String?
+	public var ciaFactbook: String?
+	public var census: String?
+	public var geonames: String?
+	public var musicBrainz: String?
+	public var crunchbase: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Feed.swift
+	public var totalTransactions: Int?
+	public var feed: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Authors.swift
+	public var confident: String?
+	public var names: [String]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DialogProfile.swift
+	public struct Profile: Mappable
+	public init(clientID: Int? = nil, parameters: [String: String]? = nil)
+	public init?(_: Map) {}
+	mutating public func mapping(map: Map)
+	public struct Parameter: Mappable
+	public init(name: String? = nil, value: String? = nil)
+	public init?(_: Map) {}
+	mutating public func mapping(map: Map)
+SpeechToText.swift
+	public var delegate : SpeechToTextDelegate?
+	public func startListening()
+	public func stopListening()
+Microformats.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var microformats: [Microformat]?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+DialogNode.swift
+	public struct Node: Mappable
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Keywords.swift
+	public var totalTransactions: Int?
+	public var language: String?
+	public var url: String?
+	public var keywords: [Keyword]?
+	public var text: String?
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)
+Quotation.swift
+	public var quotation: String!
+	public init?(_ map: Map) {}
+	public mutating func mapping(map: Map)

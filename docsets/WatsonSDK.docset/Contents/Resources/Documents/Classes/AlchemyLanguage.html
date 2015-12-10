@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AlchemyLanguage Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AlchemyLanguage" class="dashAnchor"></a>
+    <a title="AlchemyLanguage Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">WatsonSDK Docs</a> (25% documented)</p>
+        <p class="header-right"><a href="https://github.com/IBM-MIL/Watson-iOS-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">WatsonSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AlchemyLanguage Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyCombineDictionaryUtil.html">AlchemyCombineDictionaryUtil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyLanguage.html">AlchemyLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyLanguageConstants.html">AlchemyLanguageConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C9WatsonSDK14AlchemyService">AlchemyService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyVision.html">AlchemyVision</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Dialog.html">Dialog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LanguageTranslation.html">LanguageTranslation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NLCConstants.html">NLCConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NaturalLanguageClassifier.html">NaturalLanguageClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NetworkUtils.html">NetworkUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PersonalityInsights.html">PersonalityInsights</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Service.html">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechToText.html">SpeechToText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextToSpeech.html">TextToSpeech</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Transformation.html">Transformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VisionConstants.html">VisionConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WatsonCoreConstants.html">WatsonCoreConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C9WatsonSDK13WatsonService">WatsonService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ContentType.html">ContentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MediaType.html">MediaType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ServiceType.html">ServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SpeechToTextAudioFormat.html">SpeechToTextAudioFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Status.html">Status</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSError.html">NSError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Request.html">Request</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AlchemyGenericModel.html">AlchemyGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SpeechToTextDelegate.html">SpeechToTextDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TextToSpeechService.html">TextToSpeechService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Authors.html">Authors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Classification.html">Classification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClassifiedClass.html">ClassifiedClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Classifier.html">Classifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CombinedResults.html">CombinedResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Concept.html">Concept</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConceptResponse.html">ConceptResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CoreResponse.html">CoreResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisambiguatedLinks.html">DisambiguatedLinks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentAuthors.html">DocumentAuthors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentSentiment.html">DocumentSentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentText.html">DocumentText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentTitle.html">DocumentTitle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Entities.html">Entities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Feed.html">Feed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Feeds.html">Feeds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IdentifiableLanguage.html">IdentifiableLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IdentifiedLanguage.html">IdentifiedLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageFace.html">ImageFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageFaceTags.html">ImageFaceTags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageKeyWord.html">ImageKeyWord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageKeyWords.html">ImageKeyWords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageLink.html">ImageLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageURL.html">ImageURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keyword.html">Keyword</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keywords.html">Keywords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KnowledgeGraph.html">KnowledgeGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Language.html">Language</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V9WatsonSDK28LanguageTranslationConstants">LanguageTranslationConstants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Microformat.html">Microformat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Microformats.html">Microformats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicationDate.html">PublicationDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Quotation.html">Quotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SAORelation.html">SAORelation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SAORelations.html">SAORelations</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Sentiment.html">Sentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextAlternative.html">SpeechToTextAlternative</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResponse.html">SpeechToTextResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Taxonomies.html">Taxonomies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TranslationModel.html">TranslationModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Voice.html">Voice</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9WatsonSDK10HTTPMethod">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9WatsonSDK17ParameterEncoding">ParameterEncoding</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AlchemyLanguage</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                </div>
+              </div>
+            <p><strong>AlchemyLanguage</strong></p>
+
+<p><a href="http://www.alchemyapi.com/products/alchemylanguage">http://www.alchemyapi.com/products/alchemylanguage</a></p>
+
+<p><li>Entity Extraction</li>
+<li>Sentiment Analysis</li>
+<li>Keyword Extraction</li>
+<li>Concept Tagging</li>
+<li>Relation Extraction</li>
+<li>Taxonomy Classification</li>
+<div class="aside aside-author">
+          <p class="aside-title">Author</p>
+          Author Extraction</p>
+<pre class="highlight plaintext"><code>    &lt;/div&gt;&lt;li&gt;Language Detection&lt;/li&gt;
+</code></pre>
+
+<p><li>Text Extraction</li>
+<li>Microformats Parsing</li>
+<li>Feed Detection</li>
+<li>Linked Data Support</li></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage21GetEntitiesParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetEntitiesParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage21GetEntitiesParameters">GetEntitiesParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage11getEntitiesFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18entitiesParametersVS0_21GetEntitiesParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Entities_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getEntities(requestType:html:url:text:entitiesParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage11getEntitiesFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18entitiesParametersVS0_21GetEntitiesParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Entities_T__T_">getEntities(requestType:html:url:text:entitiesParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/entity/proc.html">AlchemyDocs</a></p>
+
+<p>Extracts a grouped, ranked list of named entities (people, companies, organizations, etc.) from HTML, URL, or Text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getEntities</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">entitiesParameters</span> <span class="nv">ep</span><span class="p">:</span> <span class="kt">GetEntitiesParameters</span> <span class="o">=</span> <span class="kt">GetEntitiesParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Entities</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>entitiesParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage22GetSentimentParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetSentimentParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage22GetSentimentParameters">GetSentimentParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage12getSentimentFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_13sentimentTypeOS1_13SentimentType19sentimentParametersVS0_22GetSentimentParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_17SentimentResponse_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getSentiment(requestType:html:url:text:sentimentType:sentimentParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage12getSentimentFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_13sentimentTypeOS1_13SentimentType19sentimentParametersVS0_22GetSentimentParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_17SentimentResponse_T__T_">getSentiment(requestType:html:url:text:sentimentType:sentimentParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/sentiment/proc.html">AlchemyDocs</a></p>
+
+<p>Calculates the sentiment (Positive, Neutral, Negative) for given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSentiment</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">sentimentType</span><span class="p">:</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">SentimentType</span> <span class="o">=</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">SentimentType</span><span class="o">.</span><span class="kt">Normal</span><span class="p">,</span>
+        <span class="n">sentimentParameters</span> <span class="nv">sp</span><span class="p">:</span> <span class="kt">GetSentimentParameters</span> <span class="o">=</span> <span class="kt">GetSentimentParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SentimentResponse</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sentimentType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.Normal or .Raw (see  for details)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sentimentParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage21GetKeywordsParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetKeywordsParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage21GetKeywordsParameters">GetKeywordsParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage17getRankedKeywordsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18keywordsParametersVS0_21GetKeywordsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Keywords_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getRankedKeywords(requestType:html:url:text:keywordsParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage17getRankedKeywordsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18keywordsParametersVS0_21GetKeywordsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Keywords_T__T_">getRankedKeywords(requestType:html:url:text:keywordsParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/keyword/proc.html">AlchemyDocs</a></p>
+
+<p>Extracts keywords from given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRankedKeywords</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">keywordsParameters</span> <span class="nv">kp</span><span class="p">:</span> <span class="kt">GetKeywordsParameters</span> <span class="o">=</span> <span class="kt">GetKeywordsParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Keywords</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keywordsParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage27GetRankedConceptsParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetRankedConceptsParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage27GetRankedConceptsParameters">GetRankedConceptsParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage17getRankedConceptsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18conceptsParametersVS0_27GetRankedConceptsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_15ConceptResponse_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getRankedConcepts(requestType:html:url:text:conceptsParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage17getRankedConceptsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18conceptsParametersVS0_27GetRankedConceptsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_15ConceptResponse_T__T_">getRankedConcepts(requestType:html:url:text:conceptsParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/concept/proc.html">AlchemyDocs</a></p>
+
+<p>Extracts concepts tags for given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRankedConcepts</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">conceptsParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRankedConceptsParameters</span> <span class="o">=</span> <span class="kt">GetRankedConceptsParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">ConceptResponse</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>conceptsParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage22GetRelationsParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetRelationsParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage22GetRelationsParameters">GetRelationsParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage12getRelationsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_19relationsParametersVS0_22GetRelationsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_12SAORelations_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getRelations(requestType:html:url:text:relationsParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage12getRelationsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_19relationsParametersVS0_22GetRelationsParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_12SAORelations_T__T_">getRelations(requestType:html:url:text:relationsParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/relation/proc.html">AlchemyDocs</a></p>
+
+<p>Extracts Subject-Action-Object(SAO) relations from given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRelations</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">relationsParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRelationsParameters</span> <span class="o">=</span> <span class="kt">GetRelationsParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SAORelations</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationsParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage27GetRankedTaxonomyParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetRankedTaxonomyParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage27GetRankedTaxonomyParameters">GetRankedTaxonomyParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage17getRankedTaxonomyFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18taxonomyParametersVS0_27GetRankedTaxonomyParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_10Taxonomies_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getRankedTaxonomy(requestType:html:url:text:taxonomyParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage17getRankedTaxonomyFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18taxonomyParametersVS0_27GetRankedTaxonomyParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_10Taxonomies_T__T_">getRankedTaxonomy(requestType:html:url:text:taxonomyParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/taxonomy_calls/proc.html">AlchemyDocs</a></p>
+
+<p>Categorize via the taxonomy call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRankedTaxonomy</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">taxonomyParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRankedTaxonomyParameters</span> <span class="o">=</span> <span class="kt">GetRankedTaxonomyParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Taxonomies</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>taxonomyParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage10getAuthorsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_15DocumentAuthors_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getAuthors(requestType:html:url:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage10getAuthorsFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_15DocumentAuthors_T__T_">getAuthors(requestType:html:url:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/api-calls-authors-extraction">AlchemyDocs</a></p>
+
+<p>Extracts document authors from given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAuthors</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">DocumentAuthors</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage21GetLanguageParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetLanguageParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage21GetLanguageParameters">GetLanguageParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage11getLanguageFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18languageParametersVS0_21GetLanguageParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Language_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getLanguage(requestType:html:url:text:languageParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage11getLanguageFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_4textGSqSS_18languageParametersVS0_21GetLanguageParameters17completionHandlerFT5errorCSo7NSError11returnValueVS_8Language_T__T_">getLanguage(requestType:html:url:text:languageParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/lang/proc.html">AlchemyDocs</a></p>
+
+<p>Detects the language of given content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getLanguage</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="n">languageParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetLanguageParameters</span> <span class="o">=</span> <span class="kt">GetLanguageParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Language</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL, or .Text</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input text if a .Text request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>languageParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC9WatsonSDK15AlchemyLanguage17GetTextParameters"></a>
+                    <a name="//apple_ref/swift/Struct/GetTextParameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC9WatsonSDK15AlchemyLanguage17GetTextParameters">GetTextParameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AlchemyLanguage</span><span class="p">:</span> <span class="kt">Service</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage7getTextFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_8textTypeOS1_8TextType14textParametersVS0_17GetTextParameters17completionHandlerFT5errorCSo7NSError4textVS_12DocumentText5titleVS_13DocumentTitle_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getText(requestType:html:url:textType:textParameters:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage7getTextFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_8textTypeOS1_8TextType14textParametersVS0_17GetTextParameters17completionHandlerFT5errorCSo7NSError4textVS_12DocumentText5titleVS_13DocumentTitle_T__T_">getText(requestType:html:url:textType:textParameters:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/text/proc.html">AlchemyDocs</a></p>
+
+<p><strong>Normal:</strong> Extracts cleaned text (sans ads, navigation, etc.) for given content.
+<strong>Raw:</strong> Extracts raw text for given content.
+<strong>Titles:</strong> Extracts the title of given content.</p>
+
+<p><strong>AlchemyLanguageConstants</strong> includes a <strong>TextType</strong>, default is <q>Normal</q></p>
+
+<ul>
+<li><q>getText</q> &ndash;&gt; Normal</li>
+<li><q>getRawText</q> &ndash;&gt; Raw</li>
+<li><p><q>getTitle</q> &ndash;&gt; Title</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getText</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">textType</span><span class="p">:</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">TextType</span> <span class="o">=</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">TextType</span><span class="o">.</span><span class="kt">Normal</span><span class="p">,</span>
+        <span class="n">textParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetTextParameters</span> <span class="o">=</span> <span class="kt">GetTextParameters</span><span class="p">(),</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">DocumentText</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">DocumentTitle</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textParameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>instantiate a  struct and change any values you&rsquo;d like to manually set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>and  objects.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage18getMicroformatDataFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_12Microformats_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getMicroformatData(requestType:html:url:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage18getMicroformatDataFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_12Microformats_T__T_">getMicroformatData(requestType:html:url:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/mformat/proc.html">AlchemyDocs</a></p>
+
+<p>Performs analysis using multiple features on any web page or posted HTML file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMicroformatData</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Microformats</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC9WatsonSDK15AlchemyLanguage12getFeedLinksFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_5Feeds_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getFeedLinks(requestType:html:url:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC9WatsonSDK15AlchemyLanguage12getFeedLinksFS0_FT11requestTypeOCS_24AlchemyLanguageConstants11RequestType4htmlGSqSS_3urlGSqSS_17completionHandlerFT5errorCSo7NSError11returnValueVS_5Feeds_T__T_">getFeedLinks(requestType:html:url:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><a href="http://www.alchemyapi.com/api/feed-detection/proc.html">AlchemyDocs</a></p>
+
+<p>Locates feed links from within a provided web page.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFeedLinks</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
+        <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Feeds</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>requestType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>.HTML, .URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>html</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input html if a .HTML request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>input url if a .URL request. otherwise can set to &lsquo;nil&rsquo;</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>block of code to run on completion. contains result data model instance</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A  object</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="https://github.com/IBM-MIL/Watson-iOS-SDK" target="_blank" rel="external">IBM Mobile Innovation Lab</a>. All rights reserved. (Last updated: 2015-12-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
