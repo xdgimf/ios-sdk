@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WatsonDeveloperCloud Reference</title>
+    <title>WatsonDeveloperCloud  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -210,11 +210,16 @@
             
             <a href='#watson_ios_sdk' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='watson_ios_sdk'>Watson iOS SDK</h1>
 
-<p><a href="https://magnum.travis-ci.com/IBM-MIL/Watson-iOS-SDK"><img src="https://magnum.travis-ci.com/IBM-MIL/Watson-iOS-SDK.svg?token=YPHGLjpSd2i3xBsMhsyL&amp;branch=master" alt="Build Status"></a> 
-<a href="https://codecov.io/github/IBM-MIL/Watson-iOS-SDK?branch=develop"><img src="http://codecov.io/github/IBM-MIL/Watson-iOS-SDK/coverage.svg?branch=develop" alt="codecov.io"></a>
+<p><a href="https://travis-ci.org/watson-developer-cloud/ios-sdk"><img src="https://travis-ci.org/watson-developer-cloud/ios-sdk.svg?branch=develop" alt="Build Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a></p>
 
-<p>The Watson iOS SDK is a collection of services to allow developers to quickly add Watson Cognitive Computing services to their Swift iOS applications. For a getting started using the SDK read our <a href="https://github.com/IBM-MIL/Watson-iOS-SDK/blob/develop/Quickstart.md">Quickstart Guide</a>.</p>
+<p>The Watson iOS SDK is a collection of services to allow developers to quickly add Watson Cognitive Computing services to their Swift iOS applications.</p>
+
+<p>Visit our <a href="Quickstart.md">Quickstart Guide</a> to build your first iOS app with Watson!</p>
+
+<blockquote>
+<p><em>The Watson iOS SDK is currently in beta.</em></p>
+</blockquote>
 <a href='#table_of_contents' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='table_of_contents'>Table of Contents</h2>
 
 <ul>
@@ -249,6 +254,8 @@
 <pre class="highlight shell"><code>carthage update --platform iOS
 </code></pre>
 
+<p>For more details on using the iOS SDK in your application, please review the <a href="Quickstart.md">Quickstart Guide</a>.</p>
+
 <p><strong>Frameworks Used:</strong></p>
 
 <ul>
@@ -261,7 +268,14 @@
 </ul>
 <a href='#ibm_watson_services' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='ibm_watson_services'>IBM Watson Services</h2>
 
-<p>The Watson Developer Cloud offers a variety of services for building cognitive applications.</p>
+<p><strong>Getting started with Watson Developer Cloud and Bluemix</strong></p>
+
+<p>The IBM Watson™ Developer Cloud (WDC) offers a variety of services for developing cognitive applications. Each Watson service provides a Representational State Transfer (REST) Application Programming Interface (API) for interacting with the service. Some services, such as the Speech to Text service, provide additional interfaces. </p>
+
+<p>IBM Bluemix™ is the cloud platform in which you deploy applications that you develop with Watson Developer Cloud services. The Watson Developer Cloud documentation provides information for developing applications with Watson services in Bluemix. You can learn more about Bluemix from the following links:</p>
+
+<p>The IBM Bluemix documentation, specifically the pages <a href="https://www.ng.bluemix.net/docs/">What is Bluemix</a>? and the <a href="https://www.ng.bluemix.net/docs/overview/index.html">Bluemix overview</a>.
+IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks/cloud/bluemix/">IBM Bluemix section of IBM developerWorks</a> and the article that provides <a href="http://www.ibm.com/developerworks/cloud/library/cl-intro-codename-bluemix-video/index.html?ca=dat">An introduction to the application lifecycle on IBM Bluemix</a>.</p>
 <a href='#alchemy_language' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='alchemy_language'>Alchemy Language</h3>
 
 <p>The AlchemyLanguage API utilizes sophisticated natural language processing techniques to provide high-level semantic information about your content.</p>
@@ -351,7 +365,7 @@
 <p>To use the Dialog service, developers script conversations as they would happen in the real world, upload them to a Dialog application, and enable back-and-forth conversations with a user.</p>
 
 <p>Instantiate the Dialog service:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">Dialog</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">Dialog</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
 </code></pre>
 
 <p>Create a Dialog application by uploading a Dialog file:</p>
@@ -396,7 +410,7 @@
 <p>The IBM Watson™ Language Translation service provides an Application Programming Interface (API) that lets you select a domain, customize it, then identify or select the language of text, and then translate the text from one supported language to another.</p>
 
 <p>How to instantiate and use the Language Translation service:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">LanguageTranslation</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">LanguageTranslation</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
 <span class="n">service</span><span class="o">.</span><span class="nf">getIdentifiableLanguages</span><span class="p">({(</span><span class="nv">languages</span><span class="p">:[</span><span class="kt">IdentifiableLanguage</span><span class="p">]?,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
     <span class="c1">// code here</span>
@@ -415,7 +429,7 @@
 <p>The IBM Watson™ Natural Language Classifier service uses machine learning algorithms to return the top matching predefined classes for short text inputs.</p>
 
 <p>How to instantiate and use the Natural Language Classifier service:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">NaturalLanguageClassifier</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">NaturalLanguageClassifier</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
 
 <span class="n">service</span><span class="o">.</span><span class="nf">classify</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">classifierIdInstanceId</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"is it sunny?"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:{(</span><span class="n">classification</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
@@ -482,7 +496,7 @@
 
             <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
 
-            <span class="c1">// use response.transcription()</span>
+            <span class="c1">// code here</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -508,7 +522,7 @@
     <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span> 
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
-
+         <span class="c1">// code here</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
@@ -524,7 +538,7 @@
 <p>The Watson TTS service contains support for many voices with different genders, languages, and dialects. For a complete list, see the <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/text-to-speech/using.shtml#voices">documentation</a> or call the service&rsquo;s to list the possible voices in an asynchronous callback:</p>
 <pre class="highlight swift"><code><span class="n">service</span><span class="o">.</span><span class="nf">listVoices</span><span class="p">({</span>
     <span class="n">voices</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-
+      <span class="c1">// code here</span>
 
 <span class="p">})</span>
 </code></pre>
@@ -595,7 +609,7 @@
     data, error in 
 
     if let data = data {
-
+        // code here
     }
 )
 </span></code></pre>
@@ -611,12 +625,16 @@
 
 <p>IBM Watson Services are hosted in the Bluemix platform. Before you can use each service in the SDK, the service must first be created in Bluemix, bound to an Application, and you must have the credentials that Bluemix generates for that service. Alchemy services use a single API key, and all the other Watson services use a username and password credential. For the services that have username and password credentials, a web service is used to grant a temporary Watson token to the client that can be used for subsequent calls.</p>
 
-<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application. Since there could be many strategies one could take to authenticate with Bluemix, we abstract the mechanism with a series of <em>AuthenticationStrategy</em>. </p>
+<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application. Since there could be many strategies one could take to authenticate with Bluemix, we abstract the mechanism with a collection of classes that use the protocol <em>AuthenticationStrategy</em>. </p>
 
 <p>To quickly get started with the SDK, you can use a <em>BasicAuthenticationStrategy</em>  when you create a service. You can specify the username and password, and it automatically handles fetching a temporary key from the token server. If the token expires, the strategy will fetch a new one.</p>
+
+<p>You can create a new AuthenticationStrategy unique for your application by creating a new class using the <em>AuthenticationStrategy</em> protocol. The required method <em>refreshToken</em> must be implemented and this is responsible for fetching a new token from a web services and storing the internal property token inside of the class.</p>
 <a href='#build_test' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='build_test'>Build + Test</h2>
 
 <p><strong><em>XCode</em></strong> is used to build the project for testing and deployment.  Select Product-&gt;Build For-&gt;Testing to build the project in XCode&rsquo;s menu.  </p>
+
+<p>In order to build the project and run the unit tests, a <strong>credentials.plist</strong> file needs to be populated with proper credentials in order to comumnicate with the running Watson services.  A copy of this file is located in the project&rsquo;s folder under <strong>WatsonDeveloperCloudTests</strong>.  The <strong>credentials.plist</strong> file contains a key and value for each service&rsquo;s user name and password.  For example, Personality Insights has a key of PersonalityInsightsUsername for the user name and a key of PersonalityInsightsPassword for the password.  A user name and password can be optained from a running Watson service on Bluemix.  Please refer to the <a href="#ibm-watson-services">IBM Watson Services</a> section for more information about Watson Services and Bluemix</p>
 
 <p>There are many tests already in place, positive and negative, that can be displayed when selecting the Test Navigator in XCode.  Right click on the test you want to run and select Test in the context menu to run that specific test.  You can also select a full node and right-click to run all of the tests in that node or service.  </p>
 
@@ -637,7 +655,7 @@ available in <a href="LICENSE">LICENSE</a>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://github.com/IBM-MIL/Watson-iOS-SDK" target="_blank" rel="external">IBM Mobile Innovation Lab</a>. All rights reserved. (Last updated: 2015-12-17)</p>
+          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
