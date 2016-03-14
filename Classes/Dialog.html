@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a name="//apple_ref/swift/Class/Dialog" class="dashAnchor"></a>
@@ -78,6 +79,9 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
               </li>
             </ul>
@@ -92,7 +96,7 @@
                 <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P20WatsonDeveloperCloud22AuthenticationStrategy">AuthenticationStrategy</a>
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
               </li>
             </ul>
           </li>
@@ -196,10 +200,42 @@
                 <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Taxonomies.html">Taxonomies</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
               </li>
             </ul>
           </li>
@@ -215,7 +251,9 @@
 
                 </div>
               </div>
-            <p>The IBM Watson™ Dialog service provides a comprehensive, robust, platform for managing conversations between virtual agents and users through an application programming interface (API). These conversations are commonly referred to as dialogs.</p>
+            <p>The IBM Watson™ Dialog service provides a comprehensive, robust, platform for managing
+conversations between virtual agents and users through an application programming
+interface (API). These conversations are commonly referred to as dialogs.</p>
 
           </section>
           <section class="section task-group-section">
@@ -241,19 +279,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get the content for each node associated with the Dialog application.</p>
+                        <p>Get the content for each node associated with a Dialog application.</p>
 
 <p>Depending on the Dialog design, each node can either be an input/output
 pair or just a single node.</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
 
                       </div>
                       <div class="declaration">
@@ -315,16 +344,6 @@ pair or just a single node.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Update the content for specific nodes of the Dialog application.</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>nodes: The specified nodes and updated content.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
 
                       </div>
                       <div class="declaration">
@@ -400,14 +419,6 @@ pair or just a single node.</p>
                       <div class="abstract">
                         <p>List the Dialog applications associated with the service instance.</p>
 
-<ul>
-<li>Parameters:
-
-<ul>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -457,23 +468,10 @@ pair or just a single node.</p>
 service instance. The returned Dialog application identifier can be used
 for subsequent calls to the API.</p>
 
-<p>The file content type is determined by the file extension (.mct for
-encrypted Dialog account file, .json for Watson Dialog document JSON
-format, and .xml for Watson Dialog document XML format).</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>name: The desired name of the Dialog application instance.</li>
-<li>fileURL: The URL to a file that will be uploaded and used to create
-   the dialog application. (Must contain an extension of .mct
-   for encrypted Dialog account file, .json for Watson Dialog
-   document JSON format, or .xml for Watson Dialog document XML
-   format.)</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
+<p>The file content type is determined by the file extension:
+   - .mct for encrypted Dialog account file
+   - .json for Watson Dialog document JSON format
+   - .xml for Watson Dialog document XML format</p>
 
                       </div>
                       <div class="declaration">
@@ -510,7 +508,7 @@ format, and .xml for Watson Dialog document XML format).</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The URL to a file that will be uploaded and used to create the dialog application. (Must contain an extension of .mct for encrypted Dialog account file, .json for Watson Dialog document JSON format, or .xml for Watson Dialog document XML format.)</p>
+                                  <p>The URL to a file that will be uploaded and used to create the Dialog application. Must contain an extension of .mct for encrypted Dialog account file, .json for Watson Dialog document JSON format, or .xml for Watson Dialog document XML format.</p>
 
                                 </div>
                               </td>
@@ -549,15 +547,6 @@ format, and .xml for Watson Dialog document XML format).</p>
                       <div class="abstract">
                         <p>Delete a Dialog application associated with the service instance. This
 permanently removes all associated data.</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
 
                       </div>
                       <div class="declaration">
@@ -618,18 +607,6 @@ permanently removes all associated data.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Download the Dialog file associated with the given Dialog application.</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>format: The format of the file. The format can be either OctetStream
-   (.mct file), Watson Dialog document JSON format (.json file),
-   or Watson Dialog document XML format (.xml file).</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
 
                       </div>
                       <div class="declaration">
@@ -705,19 +682,10 @@ permanently removes all associated data.</p>
                       <div class="abstract">
                         <p>Update an existing Dialog application by uploading a Dialog file.</p>
 
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>fileURL: The URL to a file that will be uploaded and used to define
-   the Dialog application&rsquo;s operation. (Must contain an extension
-   of .mct for encrypted Dialog account file, .json for Watson
-   Dialog document JSON format, or .xml for Watson Dialog document
-   XML format.)</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
+<p>The file content type is determined by the file extension:
+   - .mct for encrypted Dialog account file
+   - .json for Watson Dialog document JSON format
+   - .xml for Watson Dialog document XML format</p>
 
                       </div>
                       <div class="declaration">
@@ -754,7 +722,7 @@ permanently removes all associated data.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The URL to a file that will be uploaded and used to define the Dialog application&rsquo;s operation. (Must contain an extension of .mct for encrypted Dialog account file, .json for Watson Dialog document JSON format, or .xml for Watson Dialog document XML format.)</p>
+                                  <p>The URL to a file that will be uploaded and used to define the Dialog application&rsquo;s operation. Must contain an extension of .mct for encrypted Dialog account file, .json for Watson Dialog document JSON format, or .xml for Watson Dialog document XML format.</p>
 
                                 </div>
                               </td>
@@ -802,20 +770,7 @@ permanently removes all associated data.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Obtain recorded conversation session history for a specified date range.</p>
-
-<ul>
-<li>Parameters
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>dateFrom: The start date of the desired conversation session history.</li>
-<li>dateTo: The end date of the desired conversation session history.</li>
-<li>offset: The offset starting point in the conversation result list (default: 0).</li>
-<li>limit: The maximum number of conversations to retrieve (default: 10,000).</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
+                        <p>Obtain recorded conversation history.</p>
 
                       </div>
                       <div class="declaration">
@@ -827,6 +782,91 @@ permanently removes all associated data.</p>
         <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">Conversation</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dialogID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Dialog application identifier.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dateFrom</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The start date of the desired conversation history. The timezone should match that of the Dialog application.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dateTo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The end date of the desired conversation history. The timezone should match that of the Dialog application.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset starting point in the returned history (default: 0).</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum number of conversations to retrieve (default: 10,000).</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function invoked with the response from Watson.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -846,21 +886,6 @@ permanently removes all associated data.</p>
                       <div class="abstract">
                         <p>Start a new conversation or obtain a response for a submitted input message.</p>
 
-<ul>
-<li>Parameters
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>conversationID: The conversation identifier. If not specified, then a
-   new conversation will be started.</li>
-<li>clientID: A client identifier generated by the Dialog service. If not
-   specified, then a new client identifier will be issued.</li>
-<li>input: The user input message to send for processing. This parameter
-   is optional when conversationID is not specified.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -871,6 +896,78 @@ permanently removes all associated data.</p>
         <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">ConversationResponse</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dialogID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Dialog application identifier.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>conversationID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The conversation identifier. If not specified, then a new conversation will be started.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A client identifier generated by the Dialog service. If not specified, then a new client identifier will be issued.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>input</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The user input message to send for processing. This parameter is optional when conversationID is not specified.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function invoked with the response from Watson.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -900,18 +997,6 @@ permanently removes all associated data.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Get the values for a client&rsquo;s profile variables.</p>
-
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>clientID: A client identifier generated by the Dialog service.</li>
-<li>names: The names of the profile variables to retrieve. If nil, then all
-   profile variables will be retrieved.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
 
                       </div>
                       <div class="declaration">
@@ -1000,19 +1085,6 @@ permanently removes all associated data.</p>
                       <div class="abstract">
                         <p>Set the values for a client&rsquo;s profile variables.</p>
 
-<ul>
-<li>Parameters:
-
-<ul>
-<li>dialogID: The Dialog application identifier.</li>
-<li>clientID: A client identifier generated by the Dialog service. If not
-   specified, then a new client identifier will be issued.</li>
-<li>parameters: A dictionary of profile variables. The profile variables
-   must already be explicitly defined in the Dialog application.</li>
-<li>completionHandler: A function invoked with the response from Watson.</li>
-</ul></li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -1087,11 +1159,286 @@ permanently removes all associated data.</p>
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog11DialogModel"></a>
+                    <a name="//apple_ref/swift/Struct/DialogModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog11DialogModel">DialogModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog model</p>
+
+                        <a href="../Classes/Dialog/DialogModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DialogModel</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog12Conversation"></a>
+                    <a name="//apple_ref/swift/Struct/Conversation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog12Conversation">Conversation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog conversation</p>
+
+                        <a href="../Classes/Dialog/Conversation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Conversation</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog7HitNode"></a>
+                    <a name="//apple_ref/swift/Struct/HitNode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog7HitNode">HitNode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog hit node</p>
+
+                        <a href="../Classes/Dialog/HitNode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HitNode</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog7Message"></a>
+                    <a name="//apple_ref/swift/Struct/Message" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog7Message">Message</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog message</p>
+
+                        <a href="../Classes/Dialog/Message.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Message</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OC20WatsonDeveloperCloud6Dialog12DialogFormat"></a>
+                    <a name="//apple_ref/swift/Enum/DialogFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OC20WatsonDeveloperCloud6Dialog12DialogFormat">DialogFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Supported Dialog file formats</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DialogFormat</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog4Node"></a>
+                    <a name="//apple_ref/swift/Struct/Node" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog4Node">Node</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog node</p>
+
+                        <a href="../Classes/Dialog/Node.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Node</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog7Profile"></a>
+                    <a name="//apple_ref/swift/Struct/Profile" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog7Profile">Profile</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog profile</p>
+
+                        <a href="../Classes/Dialog/Profile.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Profile</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog9Parameter"></a>
+                    <a name="//apple_ref/swift/Struct/Parameter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog9Parameter">Parameter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog parameter</p>
+
+                        <a href="../Classes/Dialog/Parameter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Parameter</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud6Dialog20ConversationResponse"></a>
+                    <a name="//apple_ref/swift/Struct/ConversationResponse" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud6Dialog20ConversationResponse">ConversationResponse</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Dialog conversation response</p>
+
+                        <a href="../Classes/Dialog/ConversationResponse.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ConversationResponse</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

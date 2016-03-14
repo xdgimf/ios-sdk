@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a name="//apple_ref/swift/Class/LanguageTranslation" class="dashAnchor"></a>
@@ -78,6 +79,9 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
               </li>
             </ul>
@@ -92,7 +96,7 @@
                 <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P20WatsonDeveloperCloud22AuthenticationStrategy">AuthenticationStrategy</a>
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
               </li>
             </ul>
           </li>
@@ -196,10 +200,42 @@
                 <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Taxonomies.html">Taxonomies</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
               </li>
             </ul>
           </li>
@@ -221,6 +257,13 @@ to another and identifies the language in which text is written.</p>
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/TODO:%20comment%20this%20initializer"></a>
+                <a name="//apple_ref/swift/Section/TODO: comment this initializer" class="dashAnchor"></a>
+                <a href="#/TODO:%20comment%20this%20initializer">
+                  <h3 class="section-name">TODO: comment this initializer</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -243,7 +286,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getIdentifiableLanguages</span><span class="p">(</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">IdentifiableLanguage</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">IdentifiableLanguage</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -291,7 +334,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">identify</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">IdentifiedLanguage</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">IdentifiedLanguage</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -334,6 +377,167 @@ to another and identifies the language in which text is written.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTSS6sourceSS6targetSS17completionHandlerFTGSqSS_GSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/translate(_:source:target:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTSS6sourceSS6targetSS17completionHandlerFTGSqSS_GSqCSo7NSError__T__T_">translate(_:source:target:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Translate text using source and target languages</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text to translate</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>source</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The language that the original text is written in</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The language that the text will be translated into</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback method that is invoked with the translated strings</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTSS7modelIDSS17completionHandlerFTGSqSS_GSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/translate(_:modelID:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTSS7modelIDSS17completionHandlerFTGSqSS_GSqCSo7NSError__T__T_">translate(_:modelID:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Translate text using a model specified by modelID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text to translate</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>modelID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the model that should be used for translation parameters</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback method that is invoked with the translated strings</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTGSaSS_6sourceSS6targetSS17completionHandlerFTGSqGSaSS__GSqCSo7NSError__T__T_"></a>
                     <a name="//apple_ref/swift/Method/translate(_:source:target:completionHandler:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:FC20WatsonDeveloperCloud19LanguageTranslation9translateFS0_FTGSaSS_6sourceSS6targetSS17completionHandlerFTGSqGSaSS__GSqCSo7NSError__T__T_">translate(_:source:target:completionHandler:)</a>
@@ -352,7 +556,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">String</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">String</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -439,7 +643,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">String</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">String</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -513,7 +717,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getModels</span><span class="p">(</span><span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-        <span class="n">defaultModel</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">TranslationModel</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="n">defaultModel</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">([</span><span class="kt">TranslationModel</span><span class="p">]?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -600,7 +804,7 @@ to another and identifies the language in which text is written.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getModel</span><span class="p">(</span><span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">TranslationModel</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">TranslationModel</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -660,7 +864,7 @@ to another and identifies the language in which text is written.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createModel</span><span class="p">(</span><span class="nv">baseModelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">fileKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createModel</span><span class="p">(</span><span class="nv">baseModelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">fileKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -746,7 +950,7 @@ to another and identifies the language in which text is written.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteModel</span><span class="p">(</span><span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteModel</span><span class="p">(</span><span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -788,11 +992,107 @@ to another and identifies the language in which text is written.</p>
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud19LanguageTranslation18IdentifiedLanguage"></a>
+                    <a name="//apple_ref/swift/Struct/IdentifiedLanguage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud19LanguageTranslation18IdentifiedLanguage">IdentifiedLanguage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An identified language</p>
+
+                        <a href="../Classes/LanguageTranslation/IdentifiedLanguage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">IdentifiedLanguage</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud19LanguageTranslation20IdentifiableLanguage"></a>
+                    <a name="//apple_ref/swift/Struct/IdentifiableLanguage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud19LanguageTranslation20IdentifiableLanguage">IdentifiableLanguage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An identifiable language</p>
+
+                        <a href="../Classes/LanguageTranslation/IdentifiableLanguage.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">IdentifiableLanguage</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:VC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel"></a>
+                    <a name="//apple_ref/swift/Struct/TranslationModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:VC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel">TranslationModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A translation model</p>
+
+                        <a href="../Classes/LanguageTranslation/TranslationModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TranslationModel</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

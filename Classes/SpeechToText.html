@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a name="//apple_ref/swift/Class/SpeechToText" class="dashAnchor"></a>
@@ -78,6 +79,9 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
               </li>
             </ul>
@@ -92,7 +96,7 @@
                 <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P20WatsonDeveloperCloud22AuthenticationStrategy">AuthenticationStrategy</a>
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
               </li>
             </ul>
           </li>
@@ -196,10 +200,42 @@
                 <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Taxonomies.html">Taxonomies</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
               </li>
             </ul>
           </li>
@@ -215,8 +251,10 @@
 
                 </div>
               </div>
-            <p>The IBM® Speech to Text service provides an Application Programming Interface (API) that
-enables you to add speech transcription capabilities to your applications.</p>
+            <p>The IBM Watson Speech to Text service enables you to add speech transcription capabilities to
+your application. It uses machine intelligence to combine information about grammar and language
+structure to generate an accurate transcription. Transcriptions are supported for various audio
+formats and languages.</p>
 
           </section>
           <section class="section task-group-section">
@@ -225,9 +263,9 @@ enables you to add speech transcription capabilities to your applications.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo6NSData6formatOS_9MediaType12oncompletionFTGSqVS0_20SpeechToTextResponse_GSqCSo7NSError__T__T_"></a>
-                    <a name="//apple_ref/swift/Method/transcribe(_:format:oncompletion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo6NSData6formatOS_9MediaType12oncompletionFTGSqVS0_20SpeechToTextResponse_GSqCSo7NSError__T__T_">transcribe(_:format:oncompletion:)</a>
+                    <a name="/s:C20WatsonDeveloperCloud12SpeechToText13StopStreaming"></a>
+                    <a name="//apple_ref/swift/Alias/StopStreaming" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C20WatsonDeveloperCloud12SpeechToText13StopStreaming">StopStreaming</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -235,16 +273,252 @@ enables you to add speech transcription capabilities to your applications.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This function takes audio data a returns a callback with the string transcription</p>
+                        <p>A function that, when executed, stops streaming audio to Speech to Text.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transcribe</span><span class="p">(</span><span class="nv">audioData</span><span class="p">:</span> <span class="kt">NSData</span><span class="p">,</span>
-        <span class="nv">format</span><span class="p">:</span> <span class="kt">MediaType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">FLAC</span><span class="p">,</span>
-        <span class="nv">oncompletion</span><span class="p">:</span> <span class="p">(</span><span class="kt">SpeechToTextResponse</span><span class="p">?,</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">StopStreaming</span> <span class="o">=</span> <span class="kt">Void</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToTextcFMS0_FT12authStrategyPS_22AuthenticationStrategy__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(authStrategy:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToTextcFMS0_FT12authStrategyPS_22AuthenticationStrategy__S0_">init(authStrategy:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a <code><a href="../Classes/SpeechToText.html">SpeechToText</a></code> object that can be used to transcribe audio data to text.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="nv">authStrategy</span><span class="p">:</span> <span class="kt">AuthenticationStrategy</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authStrategy</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code>AuthenticationStrategy</code> that defines how to authenticate with the Watson Developer Cloud&rsquo;s Speech to Text service. The <code>AuthenticationStrategy</code> is used internally to obtain tokens, refresh expired tokens, and maintain information about authentication state.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code><a href="../Classes/SpeechToText.html">SpeechToText</a></code> object that can be used to transcribe audio data to text.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToTextcFMS0_FT8usernameSS8passwordSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(username:password:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToTextcFMS0_FT8usernameSS8passwordSS_S0_">init(username:password:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a <code><a href="../Classes/SpeechToText.html">SpeechToText</a></code> object that can be used to transcribe audio data to text.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The username associated with your <code>SpeechToText</code> service.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The password associated with your <code>SpeechToText</code> service.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code><a href="../Classes/SpeechToText.html">SpeechToText</a></code> object that can be used to transcribe audio data to text.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo5NSURL8settingsVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/transcribe(_:settings:failure:success:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo5NSURL8settingsVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__T_">transcribe(_:settings:failure:success:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transcribe an audio file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transcribe</span><span class="p">(</span>
+        <span class="nv">file</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span>
+        <span class="nv">settings</span><span class="p">:</span> <span class="kt">SpeechToTextSettings</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="p">(</span><span class="kt">NSError</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="p">[</span><span class="kt">SpeechToTextResult</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>file</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The audio file to transcribe.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>settings</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The configuration for this transcription request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed whenever an error occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed with all transcription results whenever a final or interim transcription is received.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo6NSData8settingsVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/transcribe(_:settings:failure:success:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTCSo6NSData8settingsVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__T_">transcribe(_:settings:failure:success:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transcribe audio data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transcribe</span><span class="p">(</span>
+        <span class="nv">audio</span><span class="p">:</span> <span class="kt">NSData</span><span class="p">,</span>
+        <span class="nv">settings</span><span class="p">:</span> <span class="kt">SpeechToTextSettings</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="p">(</span><span class="kt">NSError</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="p">[</span><span class="kt">SpeechToTextResult</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -260,7 +534,7 @@ enables you to add speech transcription capabilities to your applications.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#audio description#&gt;</p>
+                                  <p>The audio data to transcribe.</p>
 
                                 </div>
                               </td>
@@ -268,12 +542,38 @@ enables you to add speech transcription capabilities to your applications.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>callback</em>
+                                <em>settings</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A function that will return the string</p>
+                                  <p>The configuration for this transcription request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed whenever an error occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed with all transcription results whenever a final or interim transcription is received.</p>
 
                                 </div>
                               </td>
@@ -287,9 +587,9 @@ enables you to add speech transcription capabilities to your applications.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText10encodeOpusFS0_FCSo6NSDataS1_"></a>
-                    <a name="//apple_ref/swift/Method/encodeOpus(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText10encodeOpusFS0_FCSo6NSDataS1_">encodeOpus(_:)</a>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/transcribe(_:failure:success:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText10transcribeFS0_FTVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__FT_T_">transcribe(_:failure:success:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -297,14 +597,20 @@ enables you to add speech transcription capabilities to your applications.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Description</p>
+                        <p>Stream audio from the microphone to the Speech to Text service. The microphone will stop
+recording after an end-of-speech event is detected by the Speech to Text service or the
+returned function is executed.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encodeOpus</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">NSData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSData</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transcribe</span><span class="p">(</span>
+        <span class="nv">settings</span><span class="p">:</span> <span class="kt">SpeechToTextSettings</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="p">(</span><span class="kt">NSError</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="p">[</span><span class="kt">SpeechToTextResult</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">StopStreaming</span></code></pre>
 
                         </div>
                       </div>
@@ -315,12 +621,38 @@ enables you to add speech transcription capabilities to your applications.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>data</em>
+                                <em>settings</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>PCM data</p>
+                                  <p>The configuration for this transcription request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed whenever an error occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed with all transcription results whenever a final or interim transcription is received.</p>
 
                                 </div>
                               </td>
@@ -330,22 +662,18 @@ enables you to add speech transcription capabilities to your applications.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>Opus encoded audio</p>
+                        <p>A function that, when executed, stops streaming audio to Speech to Text.</p>
 
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:VC20WatsonDeveloperCloud12SpeechToText23SpeechToTextAlternative"></a>
-                    <a name="//apple_ref/swift/Struct/SpeechToTextAlternative" class="dashAnchor"></a>
-                    <a class="token" href="#/s:VC20WatsonDeveloperCloud12SpeechToText23SpeechToTextAlternative">SpeechToTextAlternative</a>
+                    <a name="/s:FC20WatsonDeveloperCloud12SpeechToText25createTranscriptionOutputFS0_FTVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__GSqTCSo24AVCaptureAudioDataOutputFT_T___"></a>
+                    <a name="//apple_ref/swift/Method/createTranscriptionOutput(_:failure:success:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20WatsonDeveloperCloud12SpeechToText25createTranscriptionOutputFS0_FTVS_20SpeechToTextSettings7failureGSqFCSo7NSErrorT__7successFGSaVS_18SpeechToTextResult_T__GSqTCSo24AVCaptureAudioDataOutputFT_T___">createTranscriptionOutput(_:failure:success:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -353,18 +681,71 @@ enables you to add speech transcription capabilities to your applications.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>If a result has multiple transcription possibilities, there is an alternative
-provided with a confidence rating.</p>
+                        <p>Create an <code>AVCaptureAudioDataOutput</code> that streams audio to the Speech to Text service.</p>
 
-                        <a href="../Classes/SpeechToText/SpeechToTextAlternative.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SpeechToTextAlternative</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createTranscriptionOutput</span><span class="p">(</span>
+        <span class="nv">settings</span><span class="p">:</span> <span class="kt">SpeechToTextSettings</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="p">(</span><span class="kt">NSError</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="p">[</span><span class="kt">SpeechToTextResult</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">AVCaptureAudioDataOutput</span><span class="p">,</span> <span class="kt">StopStreaming</span><span class="p">)?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>settings</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The configuration for this transcription request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed whenever an error occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A function executed with all transcription results whenever a final or interim transcription is received.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple with two elements. The first element is an <code>AVCaptureAudioDataOutput</code> that streams audio to the Speech to Text service when set as the output of an <code>AVCaptureSession</code>. The second element is a function that, when executed, stops streaming to Speech to Text.</p>
+
                       </div>
                     </section>
                   </div>
@@ -374,8 +755,8 @@ provided with a confidence rating.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

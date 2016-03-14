@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TranslationModel Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/TranslationModel" class="dashAnchor"></a>
+    <a title="TranslationModel Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">WatsonDeveloperCloud Docs</a></p>
+        <p class="header-right"><a href="https://github.com/watson-developer-cloud/ios-sdk"><img src="../../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">WatsonDeveloperCloud Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        TranslationModel Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/APIKeyAuthenticationStrategy.html">APIKeyAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes.html#/s:C20WatsonDeveloperCloud28AlchemyCombineDictionaryUtil">AlchemyCombineDictionaryUtil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/AlchemyLanguage.html">AlchemyLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/AlchemyVision.html">AlchemyVision</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/BasicAuthenticationStrategy.html">BasicAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/Dialog.html">Dialog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/FacebookAuthenticationStrategy.html">FacebookAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LanguageTranslation.html">LanguageTranslation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/NaturalLanguageClassifier.html">NaturalLanguageClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/PersonalityInsights.html">PersonalityInsights</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/SpeechToText.html">SpeechToText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/TextToSpeech.html">TextToSpeech</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/Transformation.html">Transformation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/AlchemyGenericModel.html">AlchemyGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Authors.html">Authors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V20WatsonDeveloperCloud15CombinedResults">CombinedResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Concept.html">Concept</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ConceptResponse.html">ConceptResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V20WatsonDeveloperCloud12CoreResponse">CoreResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DisambiguatedLinks.html">DisambiguatedLinks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DocumentAuthors.html">DocumentAuthors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DocumentSentiment.html">DocumentSentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DocumentText.html">DocumentText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DocumentTitle.html">DocumentTitle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V20WatsonDeveloperCloud8Entities">Entities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Feed.html">Feed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Feeds.html">Feeds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ImageFace.html">ImageFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ImageFaceTags.html">ImageFaceTags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ImageKeyWord.html">ImageKeyWord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ImageKeyWords.html">ImageKeyWords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/ImageLink.html">ImageLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V20WatsonDeveloperCloud8ImageURL">ImageURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keyword.html">Keyword</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Keywords.html">Keywords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/KnowledgeGraph.html">KnowledgeGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Language.html">Language</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Microformat.html">Microformat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Microformats.html">Microformats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/PublicationDate.html">PublicationDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Quotation.html">Quotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SAORelation.html">SAORelation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SAORelations.html">SAORelations</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Sentiment.html">Sentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SentimentResponse.html">SentimentResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Taxonomies.html">Taxonomies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TranslationModel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TranslationModel</span><span class="p">:</span> <span class="kt">Mappable</span></code></pre>
+
+                </div>
+              </div>
+            <p>A translation model</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel11baseModelIDGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/baseModelID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel11baseModelIDGSqSS_">baseModelID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If this model is a custom model, this returns the base model that it is trained on. For a base model, this response value is empty.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">baseModelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel12customizableGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/customizable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel12customizableGSqSb_">customizable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether this model can be used as a base for customization.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">customizable</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel12defaultModelGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/defaultModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel12defaultModelGSqSb_">defaultModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether this model is considered a default model and is used when the source and target languages are specified without the model_id.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">defaultModel</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6domainGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/domain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6domainGSqSS_">domain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The domain of the translation model.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">domain</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel7modelIDGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/modelID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel7modelIDGSqSS_">modelID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A globally unique string that identifies the underlying model that is used for translation. This string contains all the information about source language, target language, domain, and various other related configurations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">modelID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel4nameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel4nameGSqSS_">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If a model is trained by a user, there might be an optional “name” parameter attached during training to help the user identify the model.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel5ownerGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/owner" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel5ownerGSqSS_">owner</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the bluemix-instance-id of the instance that created the model, or an empty string, if it’s a model that is trained by IBM.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6sourceGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/source" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6sourceGSqSS_">source</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Source language in two letter language code. Use the five letter code when clarifying between multiple supported languages. When model_id is used directly, it will override the source-target language combination. Also, when a two letter language code is used, but no suitable default is found, it returns an error.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6statusGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/status" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6statusGSqSS_">status</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Availability of a model.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6targetGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/target" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel6targetGSqSS_">target</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Target language in two letter language code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModelcFMS1_FC12ObjectMapper3MapGSqS1__"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModelcFMS1_FC12ObjectMapper3MapGSqS1__">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used internally to initialize a <code><a href="../../Classes/LanguageTranslation/TranslationModel.html">TranslationModel</a></code> from JSON.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">_</span> <span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span> <span class="p">{}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel7mappingFRS1_FC12ObjectMapper3MapT_"></a>
+                    <a name="//apple_ref/swift/Method/mapping(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FVC20WatsonDeveloperCloud19LanguageTranslation16TranslationModel7mappingFRS1_FC12ObjectMapper3MapT_">mapping(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used internally to serialize and deserialize JSON.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

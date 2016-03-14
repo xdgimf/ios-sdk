@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a name="//apple_ref/swift/Class/AlchemyLanguage" class="dashAnchor"></a>
@@ -78,6 +79,9 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
               </li>
             </ul>
@@ -92,7 +96,7 @@
                 <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols.html#/s:P20WatsonDeveloperCloud22AuthenticationStrategy">AuthenticationStrategy</a>
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
               </li>
             </ul>
           </li>
@@ -196,10 +200,42 @@
                 <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Taxonomies.html">Taxonomies</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
               </li>
             </ul>
           </li>
@@ -226,12 +262,12 @@
 <li>Relation Extraction</li>
 <li>Taxonomy Classification</li>
 <div class="aside aside-author">
-          <p class="aside-title">Author</p>
-          Author Extraction</p>
-<pre class="highlight plaintext"><code>    &lt;/div&gt;&lt;li&gt;Language Detection&lt;/li&gt;
-</code></pre>
+    <p class="aside-title">Author</p>
+    Author Extraction</p>
 
-<p><li>Text Extraction</li>
+<p></div>
+<li>Language Detection</li>
+<li>Text Extraction</li>
 <li>Microformats Parsing</li>
 <li>Feed Detection</li>
 <li>Linked Data Support</li></p>
@@ -267,7 +303,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">entitiesParameters</span> <span class="nv">ep</span><span class="p">:</span> <span class="kt">GetEntitiesParameters</span> <span class="o">=</span> <span class="kt">GetEntitiesParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Entities</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Entities</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -396,7 +432,7 @@
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">sentimentType</span><span class="p">:</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">SentimentType</span> <span class="o">=</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">SentimentType</span><span class="o">.</span><span class="kt">Normal</span><span class="p">,</span>
         <span class="n">sentimentParameters</span> <span class="nv">sp</span><span class="p">:</span> <span class="kt">GetSentimentParameters</span> <span class="o">=</span> <span class="kt">GetSentimentParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SentimentResponse</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SentimentResponse</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -537,7 +573,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">keywordsParameters</span> <span class="nv">kp</span><span class="p">:</span> <span class="kt">GetKeywordsParameters</span> <span class="o">=</span> <span class="kt">GetKeywordsParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Keywords</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Keywords</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -665,7 +701,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">conceptsParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRankedConceptsParameters</span> <span class="o">=</span> <span class="kt">GetRankedConceptsParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">ConceptResponse</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">ConceptResponse</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -793,7 +829,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">relationsParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRelationsParameters</span> <span class="o">=</span> <span class="kt">GetRelationsParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SAORelations</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">SAORelations</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -921,7 +957,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">taxonomyParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetRankedTaxonomyParameters</span> <span class="o">=</span> <span class="kt">GetRankedTaxonomyParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Taxonomies</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Taxonomies</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1047,7 +1083,7 @@
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAuthors</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
         <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">DocumentAuthors</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">DocumentAuthors</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1149,7 +1185,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="n">languageParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetLanguageParameters</span> <span class="o">=</span> <span class="kt">GetLanguageParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Language</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Language</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1287,7 +1323,7 @@
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">textType</span><span class="p">:</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">TextType</span> <span class="o">=</span> <span class="n">alcs</span><span class="o">.</span><span class="kt">TextType</span><span class="o">.</span><span class="kt">Normal</span><span class="p">,</span>
         <span class="n">textParameters</span> <span class="nv">pd</span><span class="p">:</span> <span class="kt">GetTextParameters</span> <span class="o">=</span> <span class="kt">GetTextParameters</span><span class="p">(),</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">DocumentText</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">DocumentTitle</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">DocumentText</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">DocumentTitle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1400,7 +1436,7 @@
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMicroformatData</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
         <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Microformats</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Microformats</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1500,7 +1536,7 @@
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFeedLinks</span><span class="p">(</span><span class="n">requestType</span> <span class="nv">rt</span><span class="p">:</span> <span class="kt">AlchemyLanguageConstants</span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span>
         <span class="nv">html</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
         <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Feeds</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">)</span></code></pre>
+        <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="nv">returnValue</span><span class="p">:</span> <span class="kt">Feeds</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1576,8 +1612,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

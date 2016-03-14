@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a title="WatsonDeveloperCloud  Reference"></a>
@@ -77,6 +78,9 @@
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
               </li>
             </ul>
@@ -91,7 +95,7 @@
                 <a href="Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols.html#/s:P20WatsonDeveloperCloud22AuthenticationStrategy">AuthenticationStrategy</a>
+                <a href="Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
               </li>
             </ul>
           </li>
@@ -195,10 +199,42 @@
                 <a href="Structs/SentimentResponse.html">SentimentResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Taxonomies.html">Taxonomies</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
               </li>
             </ul>
           </li>
@@ -208,17 +244,20 @@
         <section>
           <section class="section">
             
-            <a href='#watson_ios_sdk' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='watson_ios_sdk'>Watson iOS SDK</h1>
+            <a href='#watson_developer_cloud_ios_sdk' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='watson_developer_cloud_ios_sdk'>Watson Developer Cloud iOS SDK</h1>
 
 <p><a href="https://travis-ci.org/watson-developer-cloud/ios-sdk"><img src="https://travis-ci.org/watson-developer-cloud/ios-sdk.svg?branch=develop" alt="Build Status"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a></p>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
+<a href="https://codecov.io/github/watson-developer-cloud/ios-sdk?branch=develop"><img src="https://codecov.io/github/watson-developer-cloud/ios-sdk/coverage.svg?branch=develop" alt="codecov.io"></a>
+<a href="http://watson-developer-cloud.github.io/ios-sdk/"><img src="https://img.shields.io/badge/Docs-0.1-green.svg?style=flat" alt="Docs"></a>
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-2.1.1-orange.svg?style=flat" alt="Swift 2.1.1"></a></p>
 
-<p>The Watson iOS SDK is a collection of services to allow developers to quickly add Watson Cognitive Computing services to their Swift iOS applications.</p>
+<p>The Watson Developer Cloud iOS SDK is a collection of services to allow developers to quickly add Watson Cognitive Computing services to their Swift iOS applications.</p>
 
 <p>Visit our <a href="Quickstart.md">Quickstart Guide</a> to build your first iOS app with Watson!</p>
 
 <blockquote>
-<p><em>The Watson iOS SDK is currently in beta.</em></p>
+<p><em>The Watson Developer Cloud iOS SDK is currently in beta.</em></p>
 </blockquote>
 <a href='#table_of_contents' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='table_of_contents'>Table of Contents</h2>
 
@@ -244,13 +283,15 @@
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 
-<p>The Watson iOS SDK requires third-party dependencies such as ObjectMapper and Alamofire.  The dependency managagment tool Carthage is used to help manage those frameworks.  There are two main methods to install Carthage.  The first method is to download and run the Carthage.pkg installer.  You can locate the latest release <a href="https://github.com/Carthage/Carthage/releases">here.</a></p>
+<p>The Watson Developer Cloud iOS SDK requires third-party dependencies such as ObjectMapper and Alamofire.  The dependency management tool Carthage is used to help manage those frameworks.  The recommended version of Carthage is v0.11 or higher.  </p>
+
+<p>There are two main methods to install Carthage.  The first method is to download and run the Carthage.pkg installer.  You can locate the latest release <a href="https://github.com/Carthage/Carthage/releases">here.</a></p>
 
 <p>The second method of installing is using Homebrew for the download and installation of carthage with the following commands</p>
 <pre class="highlight shell"><code>brew update <span class="o">&amp;&amp;</span> brew install carthage
 </code></pre>
 
-<p>Once the dependency manager is installed, the next step is to download the needed frameworks for the SDK to the project path.  Make sure you are in the root of the project directory and run the following command.</p>
+<p>Once the dependency manager is installed, the next step is to download the needed frameworks for the SDK to the project path.  Make sure you are in the root of the project directory and run the following command.  All of the frameworks can be found on the filesystem directory at location ./Carthage/Build/iOS/</p>
 <pre class="highlight shell"><code>carthage update --platform iOS
 </code></pre>
 
@@ -270,7 +311,7 @@
 
 <p><strong>Getting started with Watson Developer Cloud and Bluemix</strong></p>
 
-<p>The IBM Watson™ Developer Cloud (WDC) offers a variety of services for developing cognitive applications. Each Watson service provides a Representational State Transfer (REST) Application Programming Interface (API) for interacting with the service. Some services, such as the Speech to Text service, provide additional interfaces. </p>
+<p>The IBM Watson™ Developer Cloud (WDC) offers a variety of services for developing cognitive applications. Each Watson service provides a Representational State Transfer (REST) Application Programming Interface (API) for interacting with the service. Some services, such as the Speech to Text service, provide additional interfaces.</p>
 
 <p>IBM Bluemix™ is the cloud platform in which you deploy applications that you develop with Watson Developer Cloud services. The Watson Developer Cloud documentation provides information for developing applications with Watson services in Bluemix. You can learn more about Bluemix from the following links:</p>
 
@@ -287,10 +328,11 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <li>Relation Extraction</li>
 <li>Taxonomy Classification</li>
 <div class="aside aside-author">
-          <p class="aside-title">Author</p>
-          Author Extraction
+    <p class="aside-title">Author</p>
+    Author Extraction
 
-        </div><li>Language Detection</li>
+</div>
+<li>Language Detection</li>
 <li>Text Extraction</li>
 <li>Microformats Parsing</li>
 <li>Feed Detection</li>
@@ -311,7 +353,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>API calls are instance methods, and model class instances are returned as part of our callback.</p>
 
-<p>e.g. </p>
+<p>e.g.</p>
 <pre class="highlight swift"><code>
 <span class="n">alchemyLanguageInstance</span><span class="o">.</span><span class="nf">getEntities</span><span class="p">(</span><span class="nv">requestType</span><span class="p">:</span> <span class="o">.</span><span class="kt">URL</span><span class="p">,</span>
   <span class="nv">html</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
@@ -349,7 +391,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>API calls are instance methods, and model class instances are returned as part of our callback.</p>
 
-<p>e.g. </p>
+<p>e.g.</p>
 <pre class="highlight swift"><code><span class="n">serviceVision</span><span class="o">.</span><span class="nf">recognizeFaces</span><span class="p">(</span><span class="kt">VisionConstants</span><span class="o">.</span><span class="kt">ImageFacesType</span><span class="o">.</span><span class="kt">FILE</span><span class="p">,</span>
     <span class="nv">image</span><span class="p">:</span> <span class="n">imageFromURL</span><span class="o">!</span><span class="p">,</span>
     <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">imageFaceTags</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
@@ -446,7 +488,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 </ul>
 <a href='#personality_insights' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='personality_insights'>Personality Insights</h3>
 
-<p>The IBM Watson™ Personality Insights service provides an Application Programming Interface (API) that enables applications to derive insights from social media, enterprise data, or other digital communications. The service uses linguistic analytics to infer personality and social characteristics, including Big Five, Needs, and Values, from text. </p>
+<p>The IBM Watson™ Personality Insights service provides an Application Programming Interface (API) that enables applications to derive insights from social media, enterprise data, or other digital communications. The service uses linguistic analytics to infer personality and social characteristics, including Big Five, Needs, and Values, from text.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">PersonalityInsights</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"yourusername"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"yourpassword"</span><span class="p">)</span>
 
 <span class="n">service</span><span class="o">!.</span><span class="nf">getProfile</span><span class="p">(</span><span class="s">"Some text here"</span><span class="p">)</span> <span class="p">{</span> <span class="n">profile</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
@@ -460,46 +502,107 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <ul>
 <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/personality-insights.html">IBM Watson Personality Insights - Service Page</a></li>
 <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/personality-insights">IBM Watson Personality Insights - Documentation</a></li>
-<li><a href="https://personality-insights-demo.mybluemix.net/">IBM Watson Personality Insights - Demo</a></li>
+<li><a href="https://personality-insights-livedemo.mybluemix.net">IBM Watson Personality Insights - Demo</a></li>
 </ul>
 <a href='#speech_to_text' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='speech_to_text'>Speech to Text</h3>
 
-<p>The IBM Watson Speech to Text service uses speech recognition capabilities to convert English, Spanish, Brazilian Portuguese, Japanese, and Mandarin speech into text. The services takes audio data encoded in <a href="https://www.opus-codec.org/">Opus/OGG</a>, <a href="https://xiph.org/flac/">FLAC</a>, WAV, and Linear 16-bit PCM uncompressed formats. The service automatically downmixes to one channel during transcoding.</p>
+<p>The IBM Watson Speech to Text service enables you to add speech transcription capabilities to your application. It uses machine intelligence to combine information about grammar and language structure to generate an accurate transcription. Transcriptions are supported for various audio formats and languages.</p>
+<a href='#recorded_audio' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='recorded_audio'>Recorded Audio</h4>
 
-<p>Create a SpeechToText service:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stt</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">authStrategy</span><span class="p">:</span> <span class="n">strategy</span><span class="p">)</span>
-</code></pre>
+<p>The following example demonstrates how to use the Speech to Text service to transcribe an audio file.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">NSBundle</span><span class="p">(</span><span class="nv">forClass</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="k">dynamicType</span><span class="p">)</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">fileURL</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="kt">URLForResource</span><span class="p">(</span><span class="s">"filename"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"wav"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
 
-<p>You can create an AVAudioRecorder with the necessary settings:</p>
-<pre class="highlight swift"><code>
-<span class="k">let</span> <span class="nv">filePath</span> <span class="o">=</span> <span class="kt">NSURL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="kt">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="o">.</span><span class="kt">DocumentDirectory</span><span class="p">,</span> <span class="o">.</span><span class="kt">UserDomainMask</span><span class="p">,</span> <span class="kc">true</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="se">)</span><span class="s">/SpeechToTextRecording.wav"</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span>
-<span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]()</span>
-
-<span class="n">settings</span><span class="p">[</span><span class="kt">AVSampleRateKey</span><span class="p">]</span> <span class="o">=</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">float</span><span class="p">:</span> <span class="mf">44100.0</span><span class="p">)</span>
-<span class="n">settings</span><span class="p">[</span><span class="kt">AVNumberOfChannelsKey</span><span class="p">]</span> <span class="o">=</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">int</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">do</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="n">session</span><span class="o">.</span><span class="nf">setCategory</span><span class="p">(</span><span class="kt">AVAudioSessionCategoryPlayAndRecord</span><span class="p">)</span>
-        <span class="n">recorder</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">AVAudioRecorder</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="n">filePath</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">)</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-        <span class="c1">// error</span>
+<span class="k">let</span> <span class="nv">stt</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">WAV</span><span class="p">)</span>
+<span class="n">stt</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">fileURL</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
-<p>To make a call for transcription, use:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">NSData</span><span class="p">(</span><span class="nv">contentsOfURL</span><span class="p">:</span> <span class="n">recorder</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
-
-        <span class="n">sttService</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">data</span> <span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">WAV</span><span class="p">,</span> <span class="nv">oncompletion</span><span class="p">:</span> <span class="p">{</span>
-
-            <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-
-            <span class="c1">// code here</span>
-        <span class="p">}</span>
-<span class="p">}</span>
+<p>This produces the following console output.</p>
+<pre class="highlight plaintext"><code>several tornadoes touch down as a line of severe thunderstorms swept through Colorado on Sunday
 </code></pre>
+<a href='#streaming_audio' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='streaming_audio'>Streaming Audio</h4>
+
+<p>Audio can also be streamed from the microphone to the Speech to Text service for real-time transcriptions. The following example demonstrates how to use the Speech to Text service with streaming audio.</p>
+
+<p>(Unfortunately, the microphone is not accessible from within the Simulator. To run and test streaming audio functionality, please execute your application on a physical device.)</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stt</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">continuous</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">interimResults</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="k">let</span> <span class="nv">stopStreaming</span> <span class="o">=</span> <span class="n">stt</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Streaming will continue until either an end-of-speech event is detected by</span>
+<span class="c1">// the Speech to Text service or the `stopStreaming` function is executed.</span>
+</code></pre>
+
+<p>This produces the following console output.</p>
+<pre class="highlight plaintext"><code>Sir 
+several 
+several torn 
+several tornadoes 
+several tornadoes to 
+several tornadoes touched 
+several tornadoes touch down a 
+several tornadoes touch down as a law 
+several tornadoes touch down as a line of 
+several tornadoes touch down as a line of some 
+several tornadoes touch down as a line of severe 
+several tornadoes touch down as a line of severe thunderstorm 
+several tornadoes touch down as a line of severe thunderstorms 
+several tornadoes touch down as a line of severe thunderstorms swept 
+several tornadoes touch down as a line of severe thunderstorms swept through car 
+several tornadoes touch down as a line of severe thunderstorms swept through cholera 
+several tornadoes touch down as a line of severe thunderstorms swept through Colorado a 
+several tornadoes touch down as a line of severe thunderstorms swept through Colorado and so 
+several tornadoes touch down as a line of severe thunderstorms swept through Colorado and Sunday 
+several tornadoes touch down as a line of severe thunderstorms swept through Colorado on Sunday 
+several tornadoes touch down as a line of severe thunderstorms swept through Colorado on Sunday
+</code></pre>
+<a href='#custom_capture_sessions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='custom_capture_sessions'>Custom Capture Sessions</h4>
+
+<p>Advanced users who want to create and manage their own <code>AVCaptureSession</code> can construct an <code>AVCaptureAudioDataOutput</code> to stream audio to the Speech to Text service. This is particularly useful for users who would like to visualize an audio waveform, save audio to disk, or otherwise access the microphone audio data while simultaneously streaming to the Speech to Text service.</p>
+
+<p>The following example demonstrates how to use an <code>AVCaptureSession</code> to stream audio to the Speech to Text service.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stt</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">captureSession</span> <span class="o">=</span> <span class="kt">AVCaptureSession</span><span class="p">()</span>
+
+<span class="k">let</span> <span class="nv">microphoneDevice</span> <span class="o">=</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">defaultDeviceWithMediaType</span><span class="p">(</span><span class="kt">AVMediaTypeAudio</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">microphoneInput</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">AVCaptureDeviceInput</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="n">microphoneDevice</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">captureSession</span><span class="o">.</span><span class="nf">canAddInput</span><span class="p">(</span><span class="n">microphoneInput</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">captureSession</span><span class="o">.</span><span class="nf">addInput</span><span class="p">(</span><span class="n">microphoneInput</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">continuous</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">interimResults</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="k">let</span> <span class="nv">transcriptionOutput</span> <span class="o">=</span> <span class="n">stt</span><span class="o">.</span><span class="nf">createTranscriptionOutput</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">captureSession</span><span class="o">.</span><span class="nf">canAddOutput</span><span class="p">(</span><span class="n">transcriptionOutput</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">captureSession</span><span class="o">.</span><span class="nf">addOutput</span><span class="p">(</span><span class="n">transcriptionOutput</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">captureSession</span><span class="o">.</span><span class="nf">startRunning</span><span class="p">()</span>
+</code></pre>
+<a href='#additional_information' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='additional_information'>Additional Information</h4>
 
 <p>The following links provide additional information about the IBM Speech to Text service:</p>
 
@@ -519,7 +622,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>To call the service to synthesize text:</p>
 <pre class="highlight swift"><code><span class="n">service</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">,</span> <span class="nv">oncompletion</span><span class="p">:</span> <span class="p">{</span>
-    <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span> 
+    <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
          <span class="c1">// code here</span>
@@ -606,7 +709,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>To use the voice, such as Kate&rsquo;s, specify the voice identifier in the synthesize method:</p>
 <pre class="highlight swift"><code><span class="n">service</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">,</span> <span class="nv">voice</span><span class="p">:</span> <span class="s">"en-GB_KateVoice"</span><span class="p">,</span> <span class="s">"oncompletion: {
-    data, error in 
+    data, error in
 
     if let data = data {
         // code here
@@ -625,7 +728,7 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>IBM Watson Services are hosted in the Bluemix platform. Before you can use each service in the SDK, the service must first be created in Bluemix, bound to an Application, and you must have the credentials that Bluemix generates for that service. Alchemy services use a single API key, and all the other Watson services use a username and password credential. For the services that have username and password credentials, a web service is used to grant a temporary Watson token to the client that can be used for subsequent calls.</p>
 
-<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application. Since there could be many strategies one could take to authenticate with Bluemix, we abstract the mechanism with a collection of classes that use the protocol <em>AuthenticationStrategy</em>. </p>
+<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application. Since there could be many strategies one could take to authenticate with Bluemix, we abstract the mechanism with a collection of classes that use the protocol <em>AuthenticationStrategy</em>.</p>
 
 <p>To quickly get started with the SDK, you can use a <em>BasicAuthenticationStrategy</em>  when you create a service. You can specify the username and password, and it automatically handles fetching a temporary key from the token server. If the token expires, the strategy will fetch a new one.</p>
 
@@ -655,8 +758,8 @@ available in <a href="LICENSE">LICENSE</a>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2015-12-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

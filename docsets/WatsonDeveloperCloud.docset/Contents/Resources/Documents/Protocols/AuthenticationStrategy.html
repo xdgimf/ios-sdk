@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AuthenticationStrategy Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/AuthenticationStrategy" class="dashAnchor"></a>
+    <a title="AuthenticationStrategy Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">WatsonDeveloperCloud Docs</a></p>
+        <p class="header-right"><a href="https://github.com/watson-developer-cloud/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">WatsonDeveloperCloud Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AuthenticationStrategy Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/APIKeyAuthenticationStrategy.html">APIKeyAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C20WatsonDeveloperCloud28AlchemyCombineDictionaryUtil">AlchemyCombineDictionaryUtil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyLanguage.html">AlchemyLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlchemyVision.html">AlchemyVision</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicAuthenticationStrategy.html">BasicAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Dialog.html">Dialog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FacebookAuthenticationStrategy.html">FacebookAuthenticationStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LanguageTranslation.html">LanguageTranslation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NaturalLanguageClassifier.html">NaturalLanguageClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PersonalityInsights.html">PersonalityInsights</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechToText.html">SpeechToText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextToSpeech.html">TextToSpeech</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Transformation.html">Transformation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud14AudioMediaType">AudioMediaType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:O20WatsonDeveloperCloud9MediaType">MediaType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AlchemyGenericModel.html">AlchemyGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AlchemyLanguageGenericModel.html">AlchemyLanguageGenericModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Authors.html">Authors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V20WatsonDeveloperCloud15CombinedResults">CombinedResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Concept.html">Concept</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConceptResponse.html">ConceptResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V20WatsonDeveloperCloud12CoreResponse">CoreResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisambiguatedLinks.html">DisambiguatedLinks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentAuthors.html">DocumentAuthors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentSentiment.html">DocumentSentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentText.html">DocumentText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DocumentTitle.html">DocumentTitle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V20WatsonDeveloperCloud8Entities">Entities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Feed.html">Feed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Feeds.html">Feeds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageFace.html">ImageFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageFaceTags.html">ImageFaceTags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageKeyWord.html">ImageKeyWord</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageKeyWords.html">ImageKeyWords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ImageLink.html">ImageLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V20WatsonDeveloperCloud8ImageURL">ImageURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keyword.html">Keyword</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Keywords.html">Keywords</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KnowledgeGraph.html">KnowledgeGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Language.html">Language</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Microformat.html">Microformat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Microformats.html">Microformats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PublicationDate.html">PublicationDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Quotation.html">Quotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SAORelation.html">SAORelation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SAORelations.html">SAORelations</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Sentiment.html">Sentiment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SentimentResponse.html">SentimentResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextKeywordResult.html">SpeechToTextKeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextResult.html">SpeechToTextResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextSettings.html">SpeechToTextSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextTranscription.html">SpeechToTextTranscription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResult.html">SpeechToTextWordAlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordAlternativeResults.html">SpeechToTextWordAlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordConfidence.html">SpeechToTextWordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpeechToTextWordTimestamp.html">SpeechToTextWordTimestamp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Taxonomies.html">Taxonomies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Taxonomy.html">Taxonomy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:C20WatsonDeveloperCloud6Dialog8DialogID">DialogID</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AuthenticationStrategy</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AuthenticationStrategy</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                </div>
+              </div>
+            <p>An <code>AuthenticationStrategy</code> defines how to authenticate with a Watson Developer Cloud
+service. It is used internally to obtain tokens, refresh expired tokens, and maintain
+information about authentication state.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP20WatsonDeveloperCloud22AuthenticationStrategy5tokenGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/token" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP20WatsonDeveloperCloud22AuthenticationStrategy5tokenGSqSS_">token</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The token that shall be used to authenticate with Watson.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP20WatsonDeveloperCloud22AuthenticationStrategy12isRefreshingSb"></a>
+                    <a name="//apple_ref/swift/Property/isRefreshing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP20WatsonDeveloperCloud22AuthenticationStrategy12isRefreshingSb">isRefreshing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Is the token currently being refreshed?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">isRefreshing</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP20WatsonDeveloperCloud22AuthenticationStrategy7retriesSi"></a>
+                    <a name="//apple_ref/swift/Property/retries" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP20WatsonDeveloperCloud22AuthenticationStrategy7retriesSi">retries</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of times the network manager has tried refreshing the token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">retries</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20WatsonDeveloperCloud22AuthenticationStrategy12refreshTokenuRq_S0__Fq_FFGSqCSo7NSError_T_T_"></a>
+                    <a name="//apple_ref/swift/Method/refreshToken(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20WatsonDeveloperCloud22AuthenticationStrategy12refreshTokenuRq_S0__Fq_FFGSqCSo7NSError_T_T_">refreshToken(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Refresh the <code><a href="../Protocols/AuthenticationStrategy.html">AuthenticationStrategy</a></code>&rsquo;s token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">refreshToken</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
