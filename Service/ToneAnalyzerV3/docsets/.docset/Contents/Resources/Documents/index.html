@@ -63,12 +63,13 @@
 <p><a href="https://travis-ci.org/watson-developer-cloud/ios-sdk"><img src="https://travis-ci.org/watson-developer-cloud/ios-sdk.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
 <a href="https://codecov.io/github/watson-developer-cloud/ios-sdk?branch=master"><img src="https://codecov.io/github/watson-developer-cloud/ios-sdk/coverage.svg?branch=master" alt="codecov.io"></a>
-<a href="http://watson-developer-cloud.github.io/ios-sdk/"><img src="https://img.shields.io/badge/Docs-0.1-green.svg?style=flat" alt="Docs"></a>
-<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-2.1.1-green.svg?style=flat" alt="Swift 2.1.1"></a></p>
+<a href="http://watson-developer-cloud.github.io/ios-sdk/"><img src="https://img.shields.io/badge/Docs-0.3.0-green.svg?style=flat" alt="Docs"></a>
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" alt="Swift 2.2"></a>
+<a href="https://cla-assistant.io/watson-developer-cloud/ios-sdk"><img src="https://cla-assistant.io/readme/badge/watson-developer-cloud/ios-sdk" alt="CLA assistant"></a></p>
 
 <p>The Watson Developer Cloud iOS SDK is a collection of services to allow developers to quickly add Watson Cognitive Computing services to their Swift iOS applications.</p>
 
-<p>Visit our <a href="Quickstart.md">Quickstart Guide</a> to build your first iOS app with Watson!</p>
+<p>Visit our <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/master/Documentation/Quickstart.md">Quickstart Guide</a> to build your first iOS app with Watson!</p>
 
 <blockquote>
 <p><em>The Watson Developer Cloud iOS SDK is currently in beta.</em></p>
@@ -89,6 +90,7 @@
 <li><a href="#speech-to-text">Speech to Text</a></li>
 <li><a href="#text-to-speech">Text to Speech</a></li>
 <li><a href="#tone-analyzer">Tone Analyzer</a></li>
+<li><a href="#visual-recognition">Visual Recognition</a></li>
 </ul></li>
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#build--test">Building and Testing</a></li>
@@ -117,17 +119,14 @@
 <pre class="highlight shell"><code>carthage update --platform iOS
 </code></pre>
 
-<p>For more details on using the iOS SDK in your application, please review the <a href="Quickstart.md">Quickstart Guide</a>.</p>
+<p>For more details on using the iOS SDK in your application, please review the <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/master/Documentation/Quickstart.md">Quickstart Guide</a>.</p>
 
 <p><strong>Frameworks Used:</strong></p>
 
 <ul>
 <li><a href="https://github.com/Alamofire/Alamofire">Alamofire</a></li>
-<li><a href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a></li>
-<li><a href="https://github.com/tristanhimmelman/AlamofireObjectMapper/releases">AlamofireObjectMapper</a></li>
+<li><a href="https://github.com/bignerdranch/Freddy">Freddy</a></li>
 <li><a href="https://github.com/daltoniam/Starscream">Starscream</a></li>
-<li><a href="https://github.com/rhodgkins/SwiftHTTPStatusCodes">HTTPStatusCodes</a></li>
-<li><a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a></li>
 </ul>
 <a href='#ibm-watson-services' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='ibm-watson-services'>IBM Watson Services</h2>
 
@@ -194,8 +193,8 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <a href='#links' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='links'>Links</h5>
 
 <ul>
-<li>AlchemyVision API docs <a href="http://www.alchemyapi.com/products/alchemyla">here</a></li>
-<li>Try out the <a href="http://www.alchemyapi.com/products/alchemyVision">demo</a></li>
+<li>AlchemyVision API docs <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/alchemy-vision.html">here</a></li>
+<li>Try out the <a href="http://vision.alchemy.ai">demo</a></li>
 </ul>
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='requirements'>Requirements</h5>
 
@@ -213,13 +212,12 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <p>API calls are instance methods, and model class instances are returned as part of our callback.</p>
 
 <p>e.g.</p>
-<pre class="highlight swift"><code><span class="n">alchemyVision</span><span class="o">.</span><span class="nf">recognizeFaces</span><span class="p">(</span><span class="kt">VisionConstants</span><span class="o">.</span><span class="kt">ImageFacesType</span><span class="o">.</span><span class="kt">FILE</span><span class="p">,</span>
-    <span class="nv">image</span><span class="p">:</span> <span class="n">imageFromURL</span><span class="o">!</span><span class="p">,</span>
-    <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">imageFaceTags</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
 
-    <span class="c1">// code here</span>
-
-<span class="p">})</span>
+<span class="n">alchemyVision</span><span class="o">.</span><span class="nf">getRankedImageFaceTags</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+                                     <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">facetags</span> <span class="k">in</span>
+    <span class="n">code</span> <span class="n">here</span>
+<span class="p">}</span>
 </code></pre>
 <a href='#dialog' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='dialog'>Dialog</h3>
 
@@ -233,30 +231,39 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>Create a Dialog application by uploading a Dialog file:</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">dialogID</span><span class="p">:</span> <span class="kt">Dialog</span><span class="o">.</span><span class="kt">DialogID</span><span class="p">?</span>
-<span class="n">dialog</span><span class="o">.</span><span class="nf">createDialog</span><span class="p">(</span><span class="n">dialogName</span><span class="p">,</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="n">dialogFile</span><span class="p">)</span> <span class="p">{</span> <span class="n">dialogID</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">dialogID</span> <span class="o">=</span> <span class="n">dialogID</span>
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">dialog</span><span class="o">.</span><span class="nf">createDialog</span><span class="p">(</span><span class="n">dialogName</span><span class="p">,</span>
+                    <span class="nv">fileURL</span><span class="p">:</span> <span class="n">fileURL</span><span class="p">,</span>
+                    <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">dialogID</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// code here</span>
 <span class="p">}</span>
 </code></pre>
 
 <p>Start a conversation with the Dialog application:</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">conversationID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
 <span class="k">var</span> <span class="nv">clientID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
-<span class="n">dialog</span><span class="o">.</span><span class="nf">converse</span><span class="p">(</span><span class="n">dialogID</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">dialog</span><span class="o">.</span><span class="nf">converse</span><span class="p">(</span><span class="n">dialogID</span><span class="o">!</span><span class="p">,</span>
+                <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">conversationResponse</span> <span class="k">in</span>
     <span class="c1">// save conversation parameters</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">conversationID</span> <span class="o">=</span> <span class="n">response</span><span class="p">?</span><span class="o">.</span><span class="n">conversationID</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="n">response</span><span class="p">?</span><span class="o">.</span><span class="n">clientID</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">conversationID</span> <span class="o">=</span> <span class="n">conversationResponse</span><span class="o">.</span><span class="n">conversationID</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="n">conversationResponse</span><span class="o">.</span><span class="n">clientID</span>
 
     <span class="c1">// print message from Watson</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">?</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">conversationResponse</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 
 <p>Continue a conversation with the Dialog application:</p>
-<pre class="highlight swift"><code><span class="n">dialog</span><span class="o">.</span><span class="nf">converse</span><span class="p">(</span><span class="n">dialogID</span><span class="o">!</span><span class="p">,</span> <span class="nv">conversationID</span><span class="p">:</span> <span class="n">conversationID</span><span class="o">!</span><span class="p">,</span>
-    <span class="nv">clientID</span><span class="p">:</span> <span class="n">clientID</span><span class="o">!</span><span class="p">,</span> <span class="nv">input</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">dialog</span><span class="o">.</span><span class="nf">converse</span><span class="p">(</span><span class="n">dialogID</span><span class="o">!</span><span class="p">,</span>
+                <span class="nv">conversationID</span><span class="p">:</span> <span class="n">conversationID</span><span class="o">!</span><span class="p">,</span>
+                <span class="nv">clientID</span><span class="p">:</span> <span class="n">clientID</span><span class="o">!</span><span class="p">,</span>
+                <span class="nv">input</span><span class="p">:</span> <span class="n">input</span><span class="p">,</span>
+                <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">conversationResponse</span> <span class="k">in</span>
 
     <span class="c1">// print message from Watson</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">?</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">conversationResponse</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -274,10 +281,10 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>How to instantiate and use the Language Translation service:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">languageTranslation</span> <span class="o">=</span> <span class="kt">LanguageTranslation</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
-<span class="n">languageTranslation</span><span class="o">.</span><span class="nf">getIdentifiableLanguages</span><span class="p">({(</span><span class="nv">languages</span><span class="p">:[</span><span class="kt">LanguageTranslation</span><span class="o">.</span><span class="kt">IdentifiableLanguage</span><span class="p">]?,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">languageTranslation</span><span class="o">.</span><span class="nf">getIdentifiableLanguages</span><span class="p">(</span><span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">identifiableLanguage</span> <span class="k">in</span>
     <span class="c1">// code here</span>
-<span class="p">})</span>
+<span class="p">}</span>
 </code></pre>
 
 <p>The following links provide more information about the Language Translation service:</p>
@@ -293,11 +300,12 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>How to instantiate and use the Natural Language Classifier service:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">naturalLanguageClassifier</span> <span class="o">=</span> <span class="kt">NaturalLanguageClassifier</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
-
-<span class="n">naturalLanguageClassifier</span><span class="o">.</span><span class="nf">classify</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">classifierIdInstanceId</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"is it sunny?"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:{(</span><span class="n">classification</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">naturalLanguageClassifier</span><span class="o">.</span><span class="nf">classify</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">classifierIdInstanceId</span><span class="p">,</span>
+                                   <span class="nv">text</span><span class="p">:</span> <span class="s">"is it sunny?"</span><span class="p">,</span>
+                                   <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">classification</span> <span class="k">in</span>
     <span class="c1">// code here</span>
-<span class="p">})</span>
+<span class="p">}</span>
 </code></pre>
 
 <p>The following links provide more information about the Natural Language Classifier service:</p>
@@ -311,10 +319,10 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 
 <p>The IBM Watson™ Personality Insights service provides an Application Programming Interface (API) that enables applications to derive insights from social media, enterprise data, or other digital communications. The service uses linguistic analytics to infer personality and social characteristics, including Big Five, Needs, and Values, from text.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">personalityInsights</span> <span class="o">=</span> <span class="kt">PersonalityInsights</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
-
-<span class="n">personalityInsights</span><span class="o">.</span><span class="nf">getProfile</span><span class="p">(</span><span class="s">"Some text here"</span><span class="p">)</span> <span class="p">{</span> <span class="n">profile</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-
-    <span class="c1">// code here</span>
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">personalityInsights</span><span class="o">.</span><span class="nf">getProfile</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Some text here"</span><span class="p">,</span>
+                               <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">profile</span> <span class="k">in</span>
+    <span class="c1">// code here                          </span>
 <span class="p">}</span>
 </code></pre>
 
@@ -338,13 +346,15 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <span class="p">}</span>
 
 <span class="k">let</span> <span class="nv">speechToText</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">WAV</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">TranscriptionSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">WAV</span><span class="p">)</span>
 <span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
 
-<span class="n">speechToText</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">fileURL</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+<span class="n">speechToText</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">fileURL</span><span class="p">,</span>
+                        <span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span>
+                        <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
         <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
-   <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 <a href='#streaming-audio' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='streaming-audio'>Streaming Audio</h4>
@@ -352,12 +362,13 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <p>Audio can also be streamed from the microphone to the Speech to Text service for real-time transcriptions. The following example demonstrates how to use the Speech to Text service with streaming audio. (Unfortunately, the microphone is not accessible from within the Simulator. Only applications on a physical device can stream microphone audio to Speech to Text.)</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">speechToText</span> <span class="o">=</span> <span class="kt">SpeechToText</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="s">"your-username-here"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"your-password-here"</span><span class="p">)</span>
 
-<span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">TranscriptionSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">settings</span><span class="o">.</span><span class="n">continuous</span> <span class="o">=</span> <span class="kc">true</span>
 <span class="n">settings</span><span class="o">.</span><span class="n">interimResults</span> <span class="o">=</span> <span class="kc">true</span>
 
 <span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
-<span class="k">let</span> <span class="nv">stopStreaming</span> <span class="o">=</span> <span class="n">speechToText</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">stopStreaming</span> <span class="o">=</span> <span class="n">speechToText</span><span class="o">.</span><span class="nf">transcribe</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span>
+                                            <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
         <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
     <span class="p">}</span>
@@ -390,12 +401,13 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
             <span class="n">captureSession</span><span class="o">.</span><span class="nf">addInput</span><span class="p">(</span><span class="n">microphoneInput</span><span class="p">)</span>
         <span class="p">}</span>
 
-        <span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">SpeechToTextSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">TranscriptionSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="o">.</span><span class="kt">L16</span><span class="p">(</span><span class="nv">rate</span><span class="p">:</span> <span class="mi">44100</span><span class="p">,</span> <span class="nv">channels</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">continuous</span> <span class="o">=</span> <span class="kc">true</span>
         <span class="n">settings</span><span class="o">.</span><span class="n">interimResults</span> <span class="o">=</span> <span class="kc">true</span>
 
         <span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
-        <span class="k">let</span> <span class="nv">outputOpt</span> <span class="o">=</span> <span class="n">speechToText</span><span class="o">.</span><span class="nf">createTranscriptionOutput</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">outputOpt</span> <span class="o">=</span> <span class="n">speechToText</span><span class="o">.</span><span class="nf">createTranscriptionOutput</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span>
+                                                               <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">results</span> <span class="k">in</span>
             <span class="k">if</span> <span class="k">let</span> <span class="nv">transcription</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">alternatives</span><span class="o">.</span><span class="n">last</span><span class="p">?</span><span class="o">.</span><span class="n">transcript</span> <span class="p">{</span>
                 <span class="nf">print</span><span class="p">(</span><span class="n">transcription</span><span class="p">)</span>
             <span class="p">}</span>
@@ -417,7 +429,6 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
     <span class="c1">// Streaming will continue until either an end-of-speech event is detected by</span>
     <span class="c1">// the Speech to Text service, the `stopStreaming` function is executed, or</span>
     <span class="c1">// the capture session is stopped.</span>
-<span class="p">}</span>
 </code></pre>
 <a href='#additional-information' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='additional-information'>Additional Information</h4>
 
@@ -437,12 +448,9 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 </code></pre>
 
 <p>To call the service to synthesize text:</p>
-<pre class="highlight swift"><code><span class="n">textToSpeech</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span> <span class="p">{</span> 
-    <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-
-    <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
-         <span class="c1">// code here</span>
-    <span class="p">}</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">textToSpeech</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span>
+        <span class="c1">// code here</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -455,90 +463,26 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 </code></pre>
 
 <p>The Watson TTS service contains support for many voices with different genders, languages, and dialects. For a complete list, see the <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/text-to-speech/using.shtml#voices">documentation</a> or call the service&rsquo;s to list the possible voices in an asynchronous callback:</p>
-<pre class="highlight swift"><code><span class="n">textToSpeech</span><span class="o">.</span><span class="nf">listVoices</span><span class="p">({</span>
-    <span class="n">voices</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-      <span class="c1">// code here</span>
-
-<span class="p">})</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">textToSpeech</span><span class="o">.</span><span class="nf">getVoices</span><span class="p">(</span><span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">voices</span> <span class="k">in</span>
+          <span class="c1">// code here</span>
+<span class="p">}</span>
 </code></pre>
 
-<p>The following voices can be used:</p>
-
-<table><thead>
-<tr>
-<th>Voice</th>
-<th>Language</th>
-<th>Gender</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>de-DE_BirgitVoice</td>
-<td>German</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>de-DE_DieterVoice</td>
-<td>German</td>
-<td>Male</td>
-</tr>
-<tr>
-<td>en-GB_KateVoice</td>
-<td>English (British)</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>en-US_AllisonVoice</td>
-<td>English (US)</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>en-US_LisaVoice</td>
-<td>English (US)</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>es-ES_EnriqueVoice</td>
-<td>Spanish (Castilian)</td>
-<td>Male</td>
-</tr>
-<tr>
-<td>es-ES_LauraVoice</td>
-<td>Spanish (Castilian)</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>es-US_SofiaVoice</td>
-<td>Spanish (North American)</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>fr-FR_ReneeVoice</td>
-<td>French</td>
-<td>Female</td>
-</tr>
-<tr>
-<td>it-IT_FrancescaVoice</td>
-<td>Italian</td>
-<td>Female</td>
-</tr>
-</tbody></table>
+<p>You can review the different voices and languages <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/text-to-speech/using.shtml#voices">here</a>.</p>
 
 <p>To use the voice, such as Kate&rsquo;s, specify the voice identifier in the synthesize method:</p>
-<pre class="highlight swift"><code><span class="n">textToSpeech</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">,</span> <span class="nv">voice</span><span class="p">:</span> <span class="s">"en-GB_KateVoice"</span><span class="p">,</span> <span class="s">"oncompletion: {
-    data, error in
-
-    if let data = data {
-        // code here
-    }
-)
-</span></code></pre>
+<pre class="highlight swift"><code><span class="n">textToSpeech</span><span class="o">.</span><span class="nf">synthesize</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">,</span> <span class="nv">voice</span><span class="p">:</span> <span class="kt">SynthesisVoice</span><span class="o">.</span><span class="kt">GB_Kate</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span>
+    <span class="c1">// code here</span>
+<span class="p">}</span>
+</code></pre>
 
 <p>The following links provide more information about the Text To Speech service:</p>
 
 <ul>
 <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/text-to-speech.html">IBM Watson Text To Speech - Service Page</a></li>
-<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/text-to-speech/">IBM Text To Speech - Documentation</a></li>
-<li><a href="https://text-to-speech-demo.mybluemix.net/">IBM Text To Speech - Demo</a></li>
+<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/text-to-speech/">IBM Watson Text To Speech - Documentation</a></li>
+<li><a href="https://text-to-speech-demo.mybluemix.net/">IBM Watson Text To Speech - Demo</a></li>
 </ul>
 <a href='#tone-analyzer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='tone-analyzer'>Tone Analyzer</h3>
 
@@ -550,45 +494,73 @@ IBM developerWorks, specifically the <a href="https://www.ibm.com/developerworks
 <span class="k">let</span> <span class="nv">versionDate</span> <span class="o">=</span> <span class="s">"YYYY-MM-DD"</span> <span class="c1">// use today's date for the most recent version</span>
 <span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">ToneAnalyzer</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span> <span class="nv">versionDate</span><span class="p">:</span> <span class="n">versionDate</span><span class="p">)</span>
 
-<span class="n">service</span><span class="o">.</span><span class="nf">getTone</span><span class="p">(</span><span class="s">"Text that you want to get the tone of"</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">someFunc</span><span class="p">)</span> <span class="p">{</span> <span class="n">responseTone</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">service</span><span class="o">.</span><span class="nf">getTone</span><span class="p">(</span><span class="s">"Text that you want to get the tone of"</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">responseTone</span> <span class="k">in</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">responseTone</span><span class="o">.</span><span class="n">documentTone</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
+
+<p>The following links provide more information about the Text To Speech service:</p>
+
+<ul>
+<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tone-analyzer.html">IBM Watson Tone Analyzer - Service Page</a></li>
+<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/tone-analyzer/">IBM Watson Tone Analyzer - Documentation</a></li>
+<li><a href="https://tone-analyzer-demo.mybluemix.net/">IBM Watson Tone Analyzer - Demo</a></li>
+</ul>
+<a href='#visual-recognition' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='visual-recognition'>Visual Recognition</h3>
+
+<p>The Tone Analyzer service uses linguistic analysis to detect three types of tones from text: emotion, social tendencies, and language style.</p>
+
+<p>How to instantiate and use the Tone Analyzer service:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="s">"your-apikey-here"</span>
+<span class="k">let</span> <span class="nv">versionDate</span> <span class="o">=</span> <span class="s">"YYYY-MM-DD"</span> <span class="c1">// use today's date for the most recent version</span>
+
+<span class="k">let</span> <span class="nv">service</span> <span class="o">=</span> <span class="kt">VisualRecognition</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="n">apiKey</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="n">versionDate</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">service</span><span class="o">.</span><span class="nf">detectFaces</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">imagesWithFaces</span> <span class="k">in</span>
+    <span class="c1">// code here</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The following links provide more information about the Text To Speech service:</p>
+
+<ul>
+<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/visual-recognition.html">IBM Watson Visual Recognition - Service Page</a></li>
+<li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/visual-recognition/">IBM Watson Visual Recognition - Documentation</a></li>
+<li><a href="http://visual-recognition-demo.mybluemix.net/">IBM Watson Visual Recognition - Demo</a></li>
+</ul>
 <a href='#authentication' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='authentication'>Authentication</h2>
 
 <p>IBM Watson Services are hosted in the Bluemix platform. Before you can use each service in the SDK, the service must first be created in Bluemix, bound to an Application, and you must have the credentials that Bluemix generates for that service. Alchemy services use a single API key, and all the other Watson services use a username and password credential. For the services that have username and password credentials, a web service is used to grant a temporary Watson token to the client that can be used for subsequent calls.</p>
 
-<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application. Since there could be many strategies one could take to authenticate with Bluemix, we abstract the mechanism with a collection of classes that use the protocol <em>AuthenticationStrategy</em>.</p>
-
-<p>To quickly get started with the SDK, you can use a <em>BasicAuthenticationStrategy</em>  when you create a service. You can specify the username and password, and it automatically handles fetching a temporary key from the token server. If the token expires, the strategy will fetch a new one.</p>
-
-<p>You can create a new AuthenticationStrategy unique for your application by creating a new class using the <em>AuthenticationStrategy</em> protocol. The required method <em>refreshToken</em> must be implemented and this is responsible for fetching a new token from a web services and storing the internal property token inside of the class.</p>
+<p>It is not advisable in a full production app to embed the username and passwords in your application, since the application could be decompiled to extract those credentials. Instead, these credentials should remain on a deployed server, and should handle fetching the Watson token on behalf of the mobile application.</p>
 <a href='#build-test' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='build-test'>Build + Test</h2>
 
 <p><strong><em>XCode</em></strong> is used to build the project for testing and deployment.  Select Product-&gt;Build For-&gt;Testing to build the project in XCode&rsquo;s menu.  </p>
 
-<p>In order to build the project and run the unit tests, a <strong>credentials.plist</strong> file needs to be populated with proper credentials in order to comumnicate with the running Watson services.  A copy of this file is located in the project&rsquo;s folder under <strong>WatsonDeveloperCloudTests</strong>.  The <strong>credentials.plist</strong> file contains a key and value for each service&rsquo;s user name and password.  For example, Personality Insights has a key of PersonalityInsightsUsername for the user name and a key of PersonalityInsightsPassword for the password.  A user name and password can be optained from a running Watson service on Bluemix.  Please refer to the <a href="#ibm-watson-services">IBM Watson Services</a> section for more information about Watson Services and Bluemix</p>
+<p>In order to build the project and run the unit tests, a <strong>credentials.plist</strong> file needs to be populated with proper credentials in order to comumnicate with the running Watson services.  A copy of this file is located in the project&rsquo;s folder under <strong>Source/SupportingFiles</strong>.  The <strong>credentials.plist</strong> file contains a key and value for each service&rsquo;s user name and password.  For example, Personality Insights has a key of PersonalityInsightsUsername for the user name and a key of PersonalityInsightsPassword for the password.  A user name and password can be optained from a running Watson service on Bluemix.  Please refer to the <a href="#ibm-watson-services">IBM Watson Services</a> section for more information about Watson Services and Bluemix</p>
 
 <p>There are many tests already in place, positive and negative, that can be displayed when selecting the Test Navigator in XCode.  Right click on the test you want to run and select Test in the context menu to run that specific test.  You can also select a full node and right-click to run all of the tests in that node or service.  </p>
 
-<p>Tests can be found in the <strong>WatsonDeveloperCloudTests</strong> target, as well as in each individual service’s directory. All of them can be run through Xcode’s testing interface using <a href="https://developer.apple.com/library/ios/recipes/xcode_help-test_navigator/RunningTests/RunningTests.html#//apple_ref/doc/uid/TP40013329-CH4-SW1">XCTest</a>. Travis CI will also execute tests for pull requests and pushes to the repository.</p>
+<p>Tests can be found in the <strong>ServiceName+Tests</strong> target, as well as in each individual service’s directory. All of them can be run through Xcode’s testing interface using <a href="https://developer.apple.com/library/ios/recipes/xcode_help-test_navigator/RunningTests/RunningTests.html#//apple_ref/doc/uid/TP40013329-CH4-SW1">XCTest</a>. Travis CI will also execute tests for pull requests and pushes to the repository.</p>
 <a href='#open-source-ibm' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='open-source-ibm'>Open Source @ IBM</h2>
 
 <p>Find more open source projects on the <a href="http://ibm.github.io/">IBM Github Page</a></p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
 <p>This library is licensed under Apache 2.0. Full license text is
-available in <a href="LICENSE">LICENSE</a>.</p>
+available in <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/master/LICENSE">LICENSE</a>.</p>
 
 <p>This SDK is intended solely for use with an Apple iOS product and intended to be used in conjunction with officially licensed Apple development tools.</p>
 <a href='#contributing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributing'>Contributing</h2>
 
-<p>See <a href=".github/CONTRIBUTING.md">CONTRIBUTING</a> on how to help out.</p>
+<p>See <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING</a> on how to help out.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-05-20)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-05-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
