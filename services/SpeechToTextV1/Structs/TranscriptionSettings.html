@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TranscriptionSettings Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/TranscriptionSettings" class="dashAnchor"></a>
+    <a title="TranscriptionSettings Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a></p>
+        <p class="header-right"><a href="https://github.com/watson-developer-cloud/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TranscriptionSettings Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechToText.html">SpeechToText</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AudioMediaType.html">AudioMediaType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AlternativeResult.html">AlternativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AlternativeResults.html">AlternativeResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeywordResult.html">KeywordResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Transcription.html">Transcription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TranscriptionResult.html">TranscriptionResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TranscriptionSettings.html">TranscriptionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WordConfidence.html">WordConfidence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WordTimestamp.html">WordTimestamp</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TranscriptionSettings</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TranscriptionSettings</span><span class="p">:</span> <span class="kt">JSONEncodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>The settings associated with a Speech to Text recognition request. Any <code>nil</code> parameters will
+use a default value provided by the Watson Speech to Text service.</p>
+
+<p>Visit <a href="https://ibm.biz/BdHCrX">https://ibm.biz/BdHCrX</a> for more information about the Speech to Text service&rsquo;s
+parameters.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings5modelGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/model" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings5modelGSqSS_">model</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>URL query parameters for WebSockets connection request. ****</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">model</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings14learningOptOutGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/learningOptOut" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings14learningOptOutGSqSb_">learningOptOut</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>By default, the Speech to Text service logs requests and their results. Logging is
+done only for the purpose of improving the service for future users—the logged data
+is not shared or made public. If you are concerned with protecting the privacy of users&rsquo;
+personal information or otherwise do not want your requests to be logged, you can opt
+out of logging by setting this property to <code>true</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">learningOptOut</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings11contentTypeOS_14AudioMediaType"></a>
+                    <a name="//apple_ref/swift/Property/contentType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings11contentTypeOS_14AudioMediaType">contentType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The format of the audio data. Endianness is automatically detected by the Speech to Text
+service. Visit <a href="https://ibm.biz/BdHCrB">https://ibm.biz/BdHCrB</a> for more information about the supported formats.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">contentType</span><span class="p">:</span> <span class="kt"><a href="../Enums/AudioMediaType.html">AudioMediaType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings10continuousGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/continuous" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings10continuousGSqSb_">continuous</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, then the entire audio stream will be transcribed until it terminates rather
+than stopping at the first half-second of non-speech. The default is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">continuous</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings17inactivityTimeoutGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/inactivityTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings17inactivityTimeoutGSqSi_">inactivityTimeout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of seconds after which the connection is to time out due to inactivity.
+Use <code>-1</code> to set the timeout to infinity. The default is <code>30</code> seconds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">inactivityTimeout</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings8keywordsGSqGSaSS__"></a>
+                    <a name="//apple_ref/swift/Property/keywords" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings8keywordsGSqGSaSS__">keywords</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array of keyword strings to be matched in the input audio. By default, the service
+does not perform any keyword spotting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">keywords</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings17keywordsThresholdGSqSd_"></a>
+                    <a name="//apple_ref/swift/Property/keywordsThreshold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings17keywordsThresholdGSqSd_">keywordsThreshold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A minimum level of confidence that the service must have to report a matching keyword
+in the input audio. The threshold must be a probability value between <code>0</code> and <code>1</code>
+inclusive. A match must have at least the specified confidence to be returned. If you
+specify a valid threshold, you must also specify at least one keyword. By default, the
+service does not perform any keyword spotting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">keywordsThreshold</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings15maxAlternativesGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/maxAlternatives" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings15maxAlternativesGSqSi_">maxAlternatives</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The maximum number of alternative transcriptions to receive. The default is 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxAlternatives</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings14interimResultsGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/interimResults" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings14interimResultsGSqSb_">interimResults</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, then interim results (i.e. results that are not final) will be received
+for the transcription. The default is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">interimResults</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings25wordAlternativesThresholdGSqSd_"></a>
+                    <a name="//apple_ref/swift/Property/wordAlternativesThreshold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings25wordAlternativesThresholdGSqSd_">wordAlternativesThreshold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A minimum level of confidence that the service must have to report a hypothesis for a
+word from the input audio. The threshold must be a probability value between <code>0</code> and <code>1</code>
+inclusive. A hypothesis must have at least the specified confidence to be returned as a
+word alternative. By default, the service does not return any word alternatives.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">wordAlternativesThreshold</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings14wordConfidenceGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/wordConfidence" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings14wordConfidenceGSqSb_">wordConfidence</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, then a confidence score will be received for each word of the transcription.
+The default is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">wordConfidence</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings10timestampsGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/timestamps" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings10timestampsGSqSb_">timestamps</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, then per-word start and end times relative to the beginning of the audio will
+be received. The default is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timestamps</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14SpeechToTextV121TranscriptionSettings15filterProfanityGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/filterProfanity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14SpeechToTextV121TranscriptionSettings15filterProfanityGSqSb_">filterProfanity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If <code>true</code>, then profanity will be censored from the service&rsquo;s output, obscuring each
+occurrence with a set of asterisks. The default is <code>true</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">filterProfanity</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14SpeechToTextV121TranscriptionSettingscFT11contentTypeOS_14AudioMediaType_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(contentType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14SpeechToTextV121TranscriptionSettingscFT11contentTypeOS_14AudioMediaType_S0_">init(contentType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a <code>TranscriptionSettings</code> object to set the parameters of a Watson Speech to
+Text recognition request.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="kt"><a href="../Enums/AudioMediaType.html">AudioMediaType</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contentType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The format of the audio data. Endianness is automatically detected by the Speech to Text service. Visit <a href="https://ibm.biz/BdHCrB">https://ibm.biz/BdHCrB</a> for more information about the supported formats.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An initialized <code>TranscriptionSettings</code> object with the given <code><a href="../Structs/TranscriptionSettings.html#/s:vV14SpeechToTextV121TranscriptionSettings11contentTypeOS_14AudioMediaType">contentType</a></code>. Configure additional parameters for the recognition request by directly modifying the returned object&rsquo;s properties.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14SpeechToTextV121TranscriptionSettings6toJSONFT_O6Freddy4JSON"></a>
+                    <a name="//apple_ref/swift/Method/toJSON()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14SpeechToTextV121TranscriptionSettings6toJSONFT_O6Freddy4JSON">toJSON()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used internally to serialize a <code>TranscriptionSettings</code> model to JSON.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toJSON</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-06-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
