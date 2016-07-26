@@ -60,7 +60,7 @@
 <p><a href="https://travis-ci.org/watson-developer-cloud/ios-sdk"><img src="https://travis-ci.org/watson-developer-cloud/ios-sdk.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
 <a href="https://codecov.io/github/watson-developer-cloud/ios-sdk?branch=master"><img src="https://codecov.io/github/watson-developer-cloud/ios-sdk/coverage.svg?branch=master" alt="codecov.io"></a>
-<a href="http://watson-developer-cloud.github.io/ios-sdk/"><img src="https://img.shields.io/badge/Docs-0.4.1-green.svg?style=flat" alt="Docs"></a>
+<a href="http://watson-developer-cloud.github.io/ios-sdk/"><img src="https://img.shields.io/badge/Docs-0.4.2-green.svg?style=flat" alt="Docs"></a>
 <a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" alt="Swift 2.2"></a>
 <a href="https://cla-assistant.io/watson-developer-cloud/ios-sdk"><img src="https://cla-assistant.io/readme/badge/watson-developer-cloud/ios-sdk" alt="CLA assistant"></a></p>
 <a href='#overview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='overview'>Overview</h2>
@@ -98,7 +98,7 @@
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
 
 <ul>
-<li>iOS 9.0+</li>
+<li>iOS 8.0+</li>
 <li>Xcode 7.3+</li>
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
@@ -257,21 +257,33 @@ available in <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/mas
 
 <p>With the IBM Watson Conversation service you can create cognitive agents&ndash;virtual agents that combine machine learning, natural language understanding, and integrated dialog scripting tools to provide outstanding customer engagements.</p>
 
-<p>The following example shows how to send a message to the Conversation service and print the response:</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ConversationV1Experimental</span>
+<p>The following example shows how to start a conversation with the Conversation service:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ConversationV1</span>
 
 <span class="k">let</span> <span class="nv">username</span> <span class="o">=</span> <span class="s">"your-username-here"</span>
 <span class="k">let</span> <span class="nv">password</span> <span class="o">=</span> <span class="s">"your-password-here"</span>
 <span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="s">"YYYY-MM-DD"</span> <span class="c1">// use today's date for the most recent version</span>
 <span class="k">let</span> <span class="nv">conversation</span> <span class="o">=</span> <span class="kt">Conversation</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="n">version</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="nv">workspace</span> <span class="o">=</span> <span class="s">"your-workspace-id-here"</span>
-<span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="s">"your-message-here"</span>
+<span class="k">let</span> <span class="nv">workspaceID</span> <span class="o">=</span> <span class="s">"your-workspace-id-here"</span>
 <span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
-<span class="n">conversation</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="n">workspace</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">?</span> <span class="c1">// save context to continue conversation</span>
+<span class="n">conversation</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="n">workspaceID</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span>
 <span class="p">}</span>
 </code></pre>
+
+<p>The following example shows how to continue an existing conversation with the Conversation service:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="s">"Turn on the radio."</span>
+<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">conversation</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="n">workspaceID</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="n">context</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The following links provide more information about the IBM Conversation service:</p>
 
 <ul>
 <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/conversation.html">IBM Watson Conversation - Service Page</a></li>
@@ -752,7 +764,7 @@ available in <a href="https://github.com/watson-developer-cloud/ios-sdk/blob/mas
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-06-30)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-07-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
