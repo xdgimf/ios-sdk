@@ -20,258 +20,188 @@ import Starscream
 import Freddy
 import RestKit
 
-/**
- The IBM Watson Speech to Text service enables you to add speech transcription capabilities to
- your application. It uses machine intelligence to combine information about grammar and language
- structure to generate an accurate transcription. Transcriptions are supported for various audio
- formats and languages.
- */
-public class SpeechToTextSession: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
+enum SpeechToTextSessionErrors: ErrorType {
+    case InvalidHTTPUpgrade // check credentials
+}
+
+public class SpeechToTextSession: NSObject {
     
-    private var results = [TranscriptionResult]()
-    private let settings: TranscriptionSettings
-    private var state: SpeechToTextSessionState
-    private var buffer: NSMutableData
-    private let token: RestToken
-    private let socket: WebSocket
-    private var captureSession: AVCaptureSession?
-    private let userAgent = buildUserAgent("watson-apis-ios-sdk/0.5.0 SpeechToTextV1")
-    private let domain = "com.ibm.watson.developer-cloud.SpeechToTextV1"
-    
-    private var retries = 0
-    private let maxRetries = 2
-    
+    public var results = [TranscriptionResult]()
+    public var state = SessionState.Disconnected
     public var onResults: ([TranscriptionResult] -> Void)?
     public var onFailure: (NSError -> Void)?
+    
+    private let restToken: RestToken
+    private var tokenRefreshes = 0
+    private let maxTokenRefreshes = 1
+    private let socket: WebSocket
+    private let queue = NSOperationQueue()
+    private let userAgent = buildUserAgent("watson-apis-ios-sdk/0.5.0 SpeechToTextV1")
+    private let domain = "com.ibm.watson.developer-cloud.SpeechToTextV1"
     
     public init(
         username: String,
         password: String,
-        settings: TranscriptionSettings,
+        model: String? = nil,
+        learningOptOut: Bool? = nil,
         serviceURL: String = "https://stream.watsonplatform.net/speech-to-text/api",
         tokenURL: String = "https://stream.watsonplatform.net/authorization/api/v1/token",
         websocketsURL: String = "wss://stream.watsonplatform.net/speech-to-text/api/v1/recognize")
     {
-        self.settings = settings
-        
-        state = .Disconnected
-        
-        buffer = NSMutableData()
-        
         let tokenURL = tokenURL + "?url=" + serviceURL
-        token = RestToken(tokenURL: tokenURL, username: username, password: password)
+        restToken = RestToken(tokenURL: tokenURL, username: username, password: password)
         
-        socket = WebSocket(url: NSURL(string: websocketsURL)!)
+        let url = SpeechToTextSession.buildURL(websocketsURL, model: model, learningOptOut: learningOptOut)
+        socket = WebSocket(url: url!)
+        
+        queue.maxConcurrentOperationCount = 1
+        queue.suspended = true
         
         super.init()
-        
-        socket.onConnect = websocketDidConnect
-        socket.onText = websocketDidReceiveMessage
-        socket.onDisconnect = websocketDidDisconnect
+        socket.delegate = self
     }
     
-    public func startTranscribing() {
-        if !socket.isConnected {
-            connectWithToken()
+    public func connect() {
+        print("connecting")
+        try! connectWithToken()
+    }
+    
+    public func startSession(settings: TranscriptionSettings) {
+        print("queueing start message")
+        let start = try! settings.toJSON().serializeString()
+        self.writeString(start)
+    }
+    
+    public func startRecording() {
+        print("queueing recording start")
+        queue.addOperationWithBlock {
+            print("starting recording")
         }
-        startStreaming()
     }
     
-    public func stopTranscribing() {
-        stopStreaming()
-        stopRecognitionRequest()
-        // doesn't send disconnect -- server will time out
+    public func stopRecording() {
+        print("queueing recording stop")
+        queue.addOperationWithBlock {
+            print("stopping recording")
+        }
     }
     
-    private func connectWithToken() {
-        guard retries < maxRetries else {
-            let failureReason = "Invalid HTTP upgrade. Please verify your credentials."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
+    public func stopSession() throws {
+        print("queueing stop message")
+        let stop = try! TranscriptionStop().toJSON().serializeString()
+        self.writeString(stop)
+    }
+    
+    public func disconnect(forceTimeout: NSTimeInterval? = nil) {
+        print("queueing disconnect")
+        queue.addOperationWithBlock {
+            print("disconnecting")
+            self.queue.suspended = true
+            self.socket.disconnect(forceTimeout: forceTimeout)
+        }
+        queue.addOperationWithBlock {
+            print("this should never print")
+        }
+    }
+}
+
+// MARK: - Socket Management
+extension SpeechToTextSession {
+    
+    private static func buildURL(url: String, model: String? = nil, learningOptOut: Bool? = nil) -> NSURL? {
+        
+        var queryParameters = [NSURLQueryItem]()
+        
+        if let model = model {
+            queryParameters.append(NSURLQueryItem(name: "model", value: model))
         }
         
-        retries += 1
+        if let learningOptOut = learningOptOut {
+            let value = "\(learningOptOut)"
+            queryParameters.append(NSURLQueryItem(name: "x-watson-learning-opt-out", value: value))
+        }
         
-        if let token = token.token where retries == 1 {
-            socket.headers["X-Watson-Authorization-Token"] = token
-            socket.headers["User-Agent"] = userAgent
-            socket.connect()
-        } else {
-            let failure = { (error: NSError) in
-                let failureReason = "Failed to obtain an authentication token. Check credentials."
-                let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-                let error = NSError(domain: self.domain, code: 0, userInfo: userInfo)
-                self.onFailure?(error)
+        let urlComponents = NSURLComponents(string: url)
+        urlComponents?.queryItems = queryParameters
+        return urlComponents?.URL
+    }
+    
+    private func connectWithToken() throws {
+        
+        print("connecting with token")
+        
+        // restrict the number of retries
+        guard tokenRefreshes <= maxTokenRefreshes else {
+            throw SpeechToTextSessionErrors.InvalidHTTPUpgrade
+        }
+        
+        // refresh token, if necessary
+        guard let token = restToken.token else {
+            print("refreshing token")
+            restToken.refreshToken() {
+                self.tokenRefreshes += 1
+                try! self.connectWithToken()
             }
-            token.refreshToken(failure) {
-                self.socket.headers["X-Watson-Authorization-Token"] = self.token.token
-                self.socket.headers["User-Agent"] = self.userAgent
-                self.socket.connect()
-            }
-        }
-    }
-    
-    private func startStreaming() {
-        captureSession = AVCaptureSession()
-        guard let captureSession = captureSession else {
-            let failureReason = "Unable to create an AVCaptureSession."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
             return
         }
         
-        let microphoneDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio)
-        guard let microphoneInput = try? AVCaptureDeviceInput(device: microphoneDevice) else {
-            let failureReason = "Unable to access the microphone."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
-        }
-        
-        guard captureSession.canAddInput(microphoneInput) else {
-            let failureReason = "Unable to add the microphone as a capture session input. " +
-                                "(Note that the microphone is only accessible on a physical " +
-                                "device--no microphone is accessible from within the simulator.)"
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
-        }
-        
-        let transcriptionOutput = AVCaptureAudioDataOutput()
-        let queue = dispatch_queue_create("stt_streaming", DISPATCH_QUEUE_SERIAL)
-        transcriptionOutput.setSampleBufferDelegate(self, queue: queue)
-        
-        guard captureSession.canAddOutput(transcriptionOutput) else {
-            let failureReason = "Unable to add transcription as a capture session output."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
-        }
-        
-        startRecognitionRequest()
-        captureSession.addInput(microphoneInput)
-        captureSession.addOutput(transcriptionOutput)
-        captureSession.startRunning()
+        // set token and connect to socket
+        socket.headers["X-Watson-Authorization-Token"] = token
+        socket.headers["User-Agent"] = userAgent
+        socket.connect()
     }
     
-    private func stopStreaming() {
-        captureSession?.stopRunning()
-        captureSession = nil
-    }
-    
-    private func startRecognitionRequest() {
-        do {
-            let start = try settings.toJSON().serializeString()
-            socket.connect()
-            socket.writeString(start)
-        } catch {
-            let failureReason = "Failed to convert `TranscriptionStart` to a JSON string."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
+    private func writeString(str: String) {
+        print("queueing write string")
+        queue.addOperationWithBlock {
+            print("writing string")
+            self.socket.writeString(str)
         }
     }
     
-    private func stopRecognitionRequest() {
-        do {
-            let stop = try TranscriptionStop().toJSON().serializeString()
-            socket.writeString(stop)
-            // socket.disconnect()
-        } catch {
-            let failureReason = "Failed to convert `TranscriptionStop` to a JSON string."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
+    private func writeData(data: NSData) {
+        print("queueing write data")
+        queue.addOperationWithBlock {
+            print("writing data")
+            self.socket.writeData(data)
         }
     }
+}
+
+// MARK: - WebSocketDelegate
+extension SpeechToTextSession: WebSocketDelegate {
     
-    @objc public func captureOutput(
-        captureOutput: AVCaptureOutput!,
-        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-        fromConnection connection: AVCaptureConnection!)
-    {
-        guard CMSampleBufferDataIsReady(sampleBuffer) else {
-            let failureReason = "Microphone audio buffer ignored because it was not ready."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
-        }
-        
-        let emptyBuffer = AudioBuffer(mNumberChannels: 0, mDataByteSize: 0, mData: nil)
-        var audioBufferList = AudioBufferList(mNumberBuffers: 1, mBuffers: emptyBuffer)
-        var blockBuffer: CMBlockBuffer?
-        
-        CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(
-            sampleBuffer,
-            nil,
-            &audioBufferList,
-            sizeof(audioBufferList.dynamicType),
-            nil,
-            nil,
-            UInt32(kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment),
-            &blockBuffer
-        )
-        
-        let audioData = NSMutableData()
-        let audioBuffers = UnsafeBufferPointer<AudioBuffer>(start: &audioBufferList.mBuffers,
-                                                            count: Int(audioBufferList.mNumberBuffers))
-        for audioBuffer in audioBuffers {
-            audioData.appendBytes(audioBuffer.mData, length: Int(audioBuffer.mDataByteSize))
-        }
-        
-        switch state {
-        case .Connected: buffer.appendData(audioData)
-        case .Listening:
-            state = .Transcribing
-            socket.writeData(audioData)
-        case .Transcribing: socket.writeData(audioData)
-        case .Disconnected: return
-        }
-    }
-    
-    private func websocketDidConnect() {
-        print("connected")
+    public func websocketDidConnect(socket: WebSocket) {
+        print("did connect")
         state = .Listening
-        retries = 0
+        queue.suspended = false
     }
     
-    private func websocketDidReceiveMessage(text: String) {
+    public func websocketDidReceiveData(socket: WebSocket, data: NSData) {
+        return
+    }
+    
+    public func websocketDidReceiveMessage(socket: WebSocket, text: String) {
         print("did receive message: \(text)")
-        do {
-            let json = try JSON(jsonString: text)
-            let state = try? json.decode(type: TranscriptionState.self)
-            let results = try? json.decode(type: TranscriptionResultWrapper.self)
-            let error = try? json.string("error")
-            
-            if let state = state {
-                onStateDelegate(state)
-            } else if let results = results {
-                onResultsDelegate(results)
-            } else if let error = error {
-                onErrorDelegate(error)
-            }
-        } catch {
-            let failureReason = "Could not serialize a generic text response to an object."
-            let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
-            let error = NSError(domain: domain, code: 0, userInfo: userInfo)
-            onFailure?(error)
-            return
+        let json = try! JSON(jsonString: text)
+        let state = try? json.decode(type: TranscriptionState.self)
+        let results = try? json.decode(type: TranscriptionResultWrapper.self)
+        let error = try? json.string("error")
+        
+        if let state = state {
+            onStateDelegate(state)
+        } else if let results = results {
+            onResultsDelegate(results)
+        } else if let error = error {
+            onErrorDelegate(error)
         }
     }
     
-    private func websocketDidDisconnect(error: NSError?) {
-        print("did disconnect")
+    public func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("did disconnect: \(error)")
         state = .Disconnected
-        buffer = NSMutableData()
         if isAuthenticationFailure(error) {
-            connectWithToken()
+            try! connectWithToken()
         } else if isDisconnectedByServer(error) {
             return
         } else if let error = error {
@@ -279,11 +209,16 @@ public class SpeechToTextSession: NSObject, AVCaptureAudioDataOutputSampleBuffer
         }
     }
     
+}
+
+extension SpeechToTextSession {
+
     private func onStateDelegate(state: TranscriptionState) {
         if self.state == .Transcribing && state.state == "listening" {
             self.state = .Listening
-            buffer = NSMutableData()
+            queue.suspended = false
         }
+        return
     }
     
     private func onResultsDelegate(wrapper: TranscriptionResultWrapper) {
@@ -345,35 +280,5 @@ public class SpeechToTextSession: NSObject, AVCaptureAudioDataOutputSampleBuffer
         
         return false
     }
+    
 }
-
-public enum SpeechToTextSessionState {
-    case Connected
-    case Listening
-    case Transcribing
-    case Disconnected
-}
-
-//    public func connect() {
-//        socket.connect()
-//    }
-//
-//    public func startTranscribing() {
-//
-//    }
-//
-//    public func startMicrophone() {
-//
-//    }
-//
-//    public func stopMicrophone() {
-//
-//    }
-//
-//    public func stopTranscribing() {
-//
-//    }
-//
-//    public func disconnect() {
-//
-//    }
