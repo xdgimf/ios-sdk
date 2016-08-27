@@ -49,7 +49,7 @@ public struct OutputData: JSONEncodable, JSONDecodable {
     public init(json: JSON) throws {
         logMessages = try json.arrayOf("log_messages", type: LogMessageResponse.self)
         text = try json.arrayOf("text", type: Swift.String)
-        nodesVisited = try json.arrayOf("nodes_visited", type: Swift.String)
+        nodesVisited = try? json.arrayOf("nodes_visited", type: Swift.String)
     }
     
     /// Used internally to serialize an `OutputData` model to JSON.
