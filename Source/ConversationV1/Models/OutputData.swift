@@ -28,16 +28,16 @@ public struct OutputData: JSONEncodable, JSONDecodable {
     
     /// An array of the nodes that were executed to create the response. The information is
     /// useful for debugging and for visualizing the path taken through the node tree.
-    public let nodesVisited: [String]
+    public let nodesVisited: [String]?
     
     /**
      Create an `OutputData`.
- 
+     
      - parameter logMessages: An array of up to 50 messages logged with the request.
      - parameter text: An array of responses to the user.
      - parameter nodesVisited: An array of the nodes that were executed to create the response.
-        The information is iseful for debugging and for visualizing the path taken through the
-        node tree.
+     The information is iseful for debugging and for visualizing the path taken through the
+     node tree.
      */
     public init(logMessages: [LogMessageResponse], text: [String], nodesVisited: [String]) {
         self.logMessages = logMessages
@@ -57,7 +57,11 @@ public struct OutputData: JSONEncodable, JSONDecodable {
         var json = [String: JSON]()
         json["log_messages"] = .Array(logMessages.map { $0.toJSON() })
         json["text"] = .Array(text.map { .String($0) })
-        json["nodes_visited"] = .Array(nodesVisited.map { .String($0) })
+        
+        if let nodesVisited = nodesVisited {
+            json["nodes_visited"] = .Array(nodesVisited.map { .String($0) })
+        }
+        
         return JSON.Dictionary(json)
     }
 }
@@ -73,7 +77,7 @@ public struct LogMessageResponse: JSONEncodable, JSONDecodable {
     
     /**
      Create a `LogMessageResponse`
- 
+     
      - parameter level: The severity of the message ("info", "error", or "warn").
      - parameter msg: The log message.
      */
